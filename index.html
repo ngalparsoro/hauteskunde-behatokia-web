@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="eu">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.maps.eox.at https://www.ign.es https://data.geopf.fr; connect-src 'self' https://tiles.maps.eox.at https://www.ign.es https://data.geopf.fr https://cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Euskal Herriko Hauteskunde Behatokia</title>
+<meta name="description" content="Euskal Herriko hauteskunde-emaitzak mapa batean: Hegoaldea eta Iparraldea, udal hauteskundeetatik Europako Parlamentura, udalerrika eta sekzioka, 2011tik.">
+<link rel="canonical" href="https://hautesbehatokia.eus/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hauteskunde Behatokia">
+<meta property="og:title" content="Euskal Herriko Hauteskunde Behatokia">
+<meta property="og:description" content="Euskal Herriko hauteskunde-emaitzak mapa batean: Hegoaldea eta Iparraldea, udal hauteskundeetatik Europako Parlamentura, udalerrika eta sekzioka, 2011tik.">
+<meta property="og:url" content="https://hautesbehatokia.eus/">
+<meta property="og:image" content="https://hautesbehatokia.eus/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="eu_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="data/index.json?v=16864603edd5" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="geo/eremuak_eh.json?v=16864603edd5" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="geo/eremuak_territorio.json?v=16864603edd5" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="geo/izenak.json?v=16864603edd5" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="geo/maskarak.json?v=16864603edd5" as="fetch" crossorigin="anonymous">
+<link rel="modulepreload" href="vendor/maplibre-gl.mjs">
+<link rel="modulepreload" href="vendor/maplibre-gl-shared.mjs">
+</head>
+<body>
+<link rel="stylesheet" href="estiloa.css?v=16864603edd5">
+
+<div id="app">
+  <header id="top">
+    <details class="nabigazioa">
+      <summary class="ibtn" aria-label="Menua" title="Menua" data-t-aria="menua" data-t-title="menua">☰</summary>
+      <nav class="nab-menua" aria-label="Atalak" data-t-aria="atalak">
+        <a href="./" aria-current="page" data-atala="mapa" data-t="mapa">Mapa</a>
+        <a href="metodologia.html" data-orria="metodologia" data-t="metodologia">Metodologia</a>
+        <a href="iturriak.html" data-orria="iturriak" data-t="iturriak">Iturriak</a>
+        <a href="guri-buruz.html" data-orria="guri-buruz" data-t="guriBuruz">Guri buruz</a>
+        <a href="lege-oharra.html" data-orria="lege-oharra" data-t="legeOharra">Lege oharra</a>
+      </nav>
+    </details>
+    <h1>Hauteskunde Behatokia <span class="beta">beta</span></h1>
+    <nav id="crumb" aria-label="Kokapena" data-t-aria="kokapena"></nav>
+    <div class="right">
+      <div class="kbd" aria-hidden="true"><kbd>1–5</kbd><kbd>Q</kbd><kbd>E</kbd><kbd>/</kbd></div>
+      <button id="laguntzabtn" class="ibtn" aria-expanded="false" aria-controls="laguntza" title="Teklatuko lasterbideak (?)" data-t-title="lasterbideakIzenb">?</button>
+      <div class="chips" id="years" role="group" aria-label="Hauteskundea" data-t-aria="hauteskundea"></div>
+      <button id="irudia" class="ibtn" title="Mapa irudi gisa deskargatu (PNG)" data-t-title="irudiaIzenb" data-t="irudia">Irudia</button>
+      <button id="basemap" class="ibtn" aria-pressed="true" title="Satelite-mapa erakutsi/ezkutatu (S)" data-t-title="sateliteaIzenb" data-t="satelitea">Satelitea</button>
+      <details class="hizkuntzak" id="hizkuntzak">
+        <summary class="ibtn" aria-label="Hizkuntza" data-t-aria="hizkuntza" data-t-title="hizkuntza">EU</summary>
+        <div class="hizk-menua"></div>
+      </details>
+    </div>
+  </header>
+  <div id="map" role="application" aria-label="Euskal Herriko mapa" data-t-aria="mapaAria"></div>
+  <button id="railbtn" class="rail-gezia" aria-expanded="true" aria-controls="rail" title="Tresnak ezkutatu / erakutsi (L)" aria-label="Tresnak ezkutatu" data-t-title="tresnakIzenb"><span aria-hidden="true">‹</span></button>
+  <aside id="rail">
+    <div class="lbl" data-t="bilatu">Bilatu</div>
+    <input id="q" type="search" list="munis" placeholder="Udalerria…" autocomplete="off" aria-label="Bilatu udalerria" data-t-ph="udalerriaPh" data-t-aria="bilatuUdalerria">
+    <datalist id="munis"></datalist>
+    <div class="lbl" data-t="mapaModua">Mapa modua</div>
+    <button class="mode" data-mode="winner" aria-pressed="true"><span class="sw"></span><span data-t="irabazlea">Irabazlea</span><kbd>W</kbd></button>
+    <button class="mode" data-mode="margin" aria-pressed="false"><span class="sw"></span><span data-t="lehianEremuak">Lehian dauden eremuak</span><kbd>M</kbd></button>
+    <button class="mode" data-mode="turnout" aria-pressed="false"><span class="sw"></span><span data-t="partehartzeaIzenb">Parte-hartzea</span><kbd>T</kbd></button>
+    <button class="mode" data-mode="compare" aria-pressed="false"><span class="sw"></span><span data-t="konparatuBiUrte">Konparatu bi urte</span><kbd>C</kbd></button>
+    <button class="mode" data-mode="udalforal" aria-pressed="false"><span class="sw"></span><span data-t="udalForu">Udal / foru aldea</span><kbd>U</kbd></button>
+    <select id="ufsel" class="sel" aria-label="Udal / foru aldea: alderdia" data-t-aria="ufselAria" hidden></select>
+    <div class="lbl" data-t="eremua">Eremua</div>
+    <select id="level" class="sel" aria-label="Eremua" data-t-aria="eremua">
+      <option value="auto" data-t="automatikoa">Automatikoa (zoomaren arabera)</option>
+      <option value="muni" data-t="mailak.muni">Udalerriak</option>
+      <option value="sec" data-t="mailak.sec">Sekzio zentsalak</option>
+    </select>
+  </aside>
+  <aside id="hud">
+    <button id="heldulekua" class="heldulekua" aria-expanded="false" aria-controls="body" aria-label="Panela zabaldu" data-t-aria="panelaZabaldu"><span></span></button>
+    <div id="hudfitxak" role="tablist" aria-label="Panela" data-t-aria="panela"><button role="tab" data-fitxa="emaitzak" aria-selected="true" data-t="emaitzak">Emaitzak</button><button role="tab" data-fitxa="eserlekuak" aria-selected="false" data-t="eserlekuak">Eserlekuak</button><button role="tab" data-fitxa="bilakaera" aria-selected="false" data-t="bilakaera">Bilakaera</button></div>
+    <div class="body" id="body" role="tabpanel"></div>
+  </aside>
+  <div id="dial" aria-label="Hauteskunde motak" data-t-aria="hauteskundeMotak"></div>
+  <div id="denboralerroa" role="group" aria-label="Denbora-lerroa" data-t-aria="denboraLerroa">
+    <button id="dlplay" aria-label="Erreproduzitu" title="Erreproduzitu (P)" data-t-title="erreproduzitu">▶</button>
+    <div class="dl-erdia"><div class="dl-goia"><span class="dl-data"></span><span class="dl-osaera"></span></div><div class="dl-pista"></div></div>
+    <button class="dl-gaur ibtn" title="Azken hauteskundeak" data-t-title="azkenHauteskundeak" data-t="gaur">Gaur</button>
+  </div>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <section id="laguntza" role="dialog" aria-modal="false" aria-labelledby="laguntzaIzenb" hidden>
+    <h2 id="laguntzaIzenb" data-t="lasterbideak">Lasterbideak</h2>
+    <button class="close" id="laguntzaItxi" aria-label="Itxi" data-t-aria="itxi">×</button>
+    <dl>
+      <dt><kbd>1</kbd>–<kbd>5</kbd></dt><dd data-t="lagMota">Mapa mota: Udalak, Autonomikoak, Foralak, Estatua, Europa</dd>
+      <dt><kbd>Q</kbd><kbd>E</kbd></dt><dd data-t="lagQE">Aurreko / hurrengo hauteskundea</dd>
+      <dt><kbd>W</kbd><kbd>M</kbd><kbd>T</kbd></dt><dd data-t="lagWMT">Irabazlea, lehian dauden eremuak, parte-hartzea</dd>
+      <dt><kbd>C</kbd><kbd>U</kbd></dt><dd data-t="lagCU">Konparatu bi urte, udal / foru aldea</dd>
+      <dt><kbd>S</kbd></dt><dd data-t="lagS">Satelite-mapa erakutsi / ezkutatu</dd>
+      <dt><kbd>L</kbd></dt><dd data-t="lagL">Ezkerreko menua erakutsi / ezkutatu</dd>
+      <dt><kbd>K</kbd></dt><dd data-t="lagK">Emaitzak ↔ eserlekuak (panelean)</dd>
+      <dt><kbd>P</kbd></dt><dd data-t="lagP">Denbora-lerroa erreproduzitu / gelditu</dd>
+      <dt><kbd>/</kbd></dt><dd data-t="lagBilatu">Udalerri bat bilatu</dd>
+      <dt><kbd>0</kbd></dt><dd data-t="lag0">Euskal Herria osoa ikusi</dd>
+      <dt><kbd>Esc</kbd></dt><dd data-t="lagEsc">Hautapena eta leihoak itxi</dd>
+    </dl>
+  </section>
+  <div id="tip"></div>
+  <div id="loading" data-t="kargatzen">Kargatzen…</div>
+</div>
+
+<script type="module" src="app.js?v=16864603edd5"></script>
+
+</body>
+</html>
