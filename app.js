@@ -389,7 +389,7 @@ const dfmt = (d) => d == null ? "" : `<span class="${d > 0 ? "up" : d < 0 ? "dow
 const BASE = (() => { let b = location.href.split(/[?#]/)[0]; if (/\.html?$/i.test(b)) b = b.slice(0, b.lastIndexOf("/") + 1); if (!b.endsWith("/")) b += "/"; return b; })();
 // Huella del contenido de data/ y geo/ (la pone build_map.py). Va en la URL de cada fichero: si los
 // datos cambian, cambia la URL y el navegador no reutiliza la copia vieja de su caché.
-const VERSION = "16864603edd5";
+const VERSION = "95d80cea6eef";
 // Los datos se cargan con fetch() desde el propio sitio (Cloudflare Pages o python -m http.server)
 const load = async (u) => {
   const r = await fetch(new URL(`${u}?v=${VERSION}`, BASE).href, { cache: "force-cache" });
@@ -1283,7 +1283,9 @@ function lerroaMargotu() {
   const [t0, t1] = lerroTartea(), x = (t) => `${((t - t0) / (t1 - t0) * 100).toFixed(2)}%`;
   const tt = state.denboraT ?? dataZ(ks.at(-1));
   const orain = new Set(zona(state.hauteskundea) === "Azkenak" ? (INFO[state.hauteskundea].osagaiak || []) : [state.hauteskundea, ...osagK()]);
-  let urteak = ""; for (let y = t0; y <= t1; y++) urteak += `<span class="dl-urtea" style="left:${x(y)}">${(t1 - t0 > 12 && y % 2) || y === t1 ? "" : y}</span>`;
+  // un año cada «pausoa», el menor que deje al menos 34 px entre etiquetas («2012» ocupa unos 26): sin juntarse en pantallas estrechas
+  const pxUrteko = (box.querySelector(".dl-pista").clientWidth || 600) / (t1 - t0), pausoa = [1, 2, 4, 5, 10].find((p) => p * pxUrteko >= 34) || 10;
+  let urteak = ""; for (let y = t0; y <= t1; y++) urteak += `<span class="dl-urtea" style="left:${x(y)}">${y % pausoa || y === t1 ? "" : y}</span>`;
   // una sola fila (círculo Hegoalde, rombo Iparralde); las de la misma fecha, un poco separadas
   const lagunak = {}; ks.forEach(k => { const g = dataZ(k).toFixed(2); (lagunak[g] = lagunak[g] || []).push(k); });
   const tartea = (k) => { const l = lagunak[dataZ(k).toFixed(2)], i = l.indexOf(k); return (i - (l.length - 1) / 2) * 9; };
@@ -1296,6 +1298,8 @@ function lerroaMargotu() {
   box.querySelector(".dl-osaera").textContent = osaeraTestua(orain);
   $("#dlplay").textContent = denboraPlay ? "❚❚" : "▶"; $("#dlplay").setAttribute("aria-label", denboraPlay ? T.gelditu : T.erreproduzitu);
 }
+let lerroaZain = false;  // al cambiar el tamaño de la ventana, las etiquetas de los años se recalculan (una vez por fotograma)
+addEventListener("resize", () => { if (!lerroaZain) { lerroaZain = true; requestAnimationFrame(() => { lerroaZain = false; lerroaMargotu(); }); } });
 // Puntero en la fecha T (cualquier mes): en cada zona, su última elección hasta T; después de la última, «Gaur»
 async function denboraEzarri(tt) {
   const ks = denborakoak(); if (!ks.length) return;
