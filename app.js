@@ -389,7 +389,7 @@ const dfmt = (d) => d == null ? "" : `<span class="${d > 0 ? "up" : d < 0 ? "dow
 const BASE = (() => { let b = location.href.split(/[?#]/)[0]; if (/\.html?$/i.test(b)) b = b.slice(0, b.lastIndexOf("/") + 1); if (!b.endsWith("/")) b += "/"; return b; })();
 // Huella del contenido de data/ y geo/ (la pone build_map.py). Va en la URL de cada fichero: si los
 // datos cambian, cambia la URL y el navegador no reutiliza la copia vieja de su caché.
-const VERSION = "95d80cea6eef";
+const VERSION = "18bbbeaa2f34";
 // Los datos se cargan con fetch() desde el propio sitio (Cloudflare Pages o python -m http.server)
 const load = async (u) => {
   const r = await fetch(new URL(`${u}?v=${VERSION}`, BASE).href, { cache: "force-cache" });
@@ -1505,8 +1505,13 @@ map.on("zoomend", async () => {
   else await mailaKargatu(mailaAktiboa());
   garbitu(mailaAktiboa()); margotu();
 });
+// Crédito de las ortofotos a pie de mapa (lo piden sus licencias): solo cuando se ven
+function ortoKreditua() { $("#ortokreditua").hidden = !(state.satelitea && map.getZoom() >= IRUDIAK.ortoMinZoom); }
+map.on("zoom", ortoKreditua);
+ortoKreditua();
 function sateliteaEzarri() {
   for (const l of ["sat", "orto"]) map.setLayoutProperty(l, "visibility", state.satelitea ? "visible" : "none");
+  ortoKreditua();
   for (const k in GEO) map.setPaintProperty(k + "-fill", "fill-opacity", ["case", ["boolean", ["feature-state", "hover"], false], .9, state.satelitea ? .62 : .9]);
 }
 $("#basemap").addEventListener("click", () => { state.satelitea = !state.satelitea; $("#basemap").setAttribute("aria-pressed", state.satelitea);

@@ -327,6 +327,17 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 #app.menurik-ez #denboralerroa { left: 24px; }
 @media (max-width: 900px) { #denboralerroa { top: 62px; left: 8px; right: 8px; } .dl-osaera { display: none; } }
 #denboralerroa[hidden] { display: none; }
+/* Crédito de las ortofotos a pie de mapa, como piden sus licencias (PNOA: «PNOA CC BY 4.0 scne.es», la fórmula abreviada
+   del IGN; BD ORTHO, Licence Ouverte: la fuente): solo cuando se ven (desde el zoom 10, con el satélite; 06-menu-erradiala.js),
+   en la franja libre bajo la línea de tiempo. Los créditos completos, en ⓘ. */
+#ortokreditua { position: absolute; bottom: 4px; left: 420px; right: 452px; z-index: 900; text-align: center;
+  font: 400 10px/12px var(--f-mono); color: var(--ink); letter-spacing: .02em; text-shadow: 0 0 3px #000, 0 0 6px rgba(0,0,0,.9);
+  pointer-events: none; white-space: nowrap; }
+#ortokreditua a { color: inherit; pointer-events: auto; }
+#ortokreditua[hidden] { display: none; }
+/* en el móvil, abajo está la hoja: arriba a la derecha, bajo la línea de tiempo; con la hoja abierta, que tapa el mapa, no */
+@media (max-width: 900px) { #ortokreditua { bottom: auto; top: 164px; left: auto; right: 10px; }
+  #app:has(#hud.zabalik) #ortokreditua { visibility: hidden; } }
 /* Variaciones respecto a las elecciones anteriores (panel y escaños) */
 .kpi .v .up, .kpi .v .down, .kpi .v span { font-size: 11px; margin-left: 4px; }
 .row.galdu { opacity: .6; }
