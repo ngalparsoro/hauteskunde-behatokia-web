@@ -491,3 +491,9 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 }
 @media (max-width: 900px) and (prefers-reduced-motion: no-preference) { #hud { transition: height .22s ease; } }
 @media (max-width: 900px) { #top h1 { max-width: 140px; } #top .beta { font-size: 7.5px; padding: 2px 3px 1px; margin-left: 3px; top: -1px; } }
+
+/* Desplegables de las páginas (Fuentes): el detalle, plegado hasta que se quiere */
+.orri-edukia details.xehetasunak { margin-top: 10px; border: 1px solid var(--line-2); padding: 0 14px; }
+.orri-edukia details.xehetasunak > summary { cursor: pointer; padding: 10px 0; font: 500 11.5px var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold-2); }
+.orri-edukia details.xehetasunak[open] > summary { border-bottom: 1px solid var(--line-2); margin-bottom: 8px; }
+.orri-edukia details.xehetasunak > summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }

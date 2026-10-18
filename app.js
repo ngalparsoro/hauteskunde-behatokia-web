@@ -1,5 +1,7 @@
 import * as maplibregl from "./vendor/maplibre-gl.mjs";
 (async function () {
+// GitHub Pages no manda cabeceras: si alguien mete la web en un marco de otro sitio (clickjacking), se sale de él
+if (window.top !== window.self) window.top.location = window.location;
 // ---- konfigurazioa: umbrales, escalas de color, coordenadas y URL externas de la web ----
 // (lo que depende de los datos —categorías, colores de partido, nombres— llega en data/index.json desde
 // scripts/web_konfig.py; aquí solo lo propio de la página)
@@ -155,7 +157,7 @@ const TESTUAK = {
     hizkuntza: "Idioma", kokapena: "Ubicación", lasterbideakIzenb: "Atajos de teclado (?)", hauteskundea: "Elección",
     satelitea: "Satélite", sateliteaIzenb: "Mostrar / ocultar el mapa de satélite (S)", mapaAria: "Mapa de Euskal Herria",
     tresnakIzenb: "Ocultar / mostrar herramientas (L)", bilatu: "Buscar", udalerriaPh: "Municipio…", bilatuUdalerria: "Buscar municipio",
-    mapaModua: "Modo del mapa", irabazlea: "Ganador", lehianEremuak: "Zonas reñidas", konparatuBiUrte: "Comparar dos años",
+    mapaModua: "Capa del mapa", irabazlea: "Ganador", lehianEremuak: "Zonas reñidas", konparatuBiUrte: "Comparar dos años",
     udalForu: "Diferencia municipales / forales", ufselAria: "Diferencia municipales / forales: partido", eremua: "Ámbito", automatikoa: "Automático (según el zoom)",
     panela: "Panel", emaitzak: "Resultados", denboraLerroa: "Línea de tiempo", azkenHauteskundeak: "Últimas elecciones",
     lasterbideak: "Atajos", itxi: "Cerrar", kargatzen: "Cargando…", errorea: "Error",
@@ -218,7 +220,7 @@ const TESTUAK = {
       europeas: "Élections européennes", azkenak: "Dernières élections" },
     mailak: { eh: "Euskal Herria", territorio: "Provinces", eskualdea: "Comarques", barruti_elektorala: "Circonscriptions (Juntes générales)",
       partido_judicial: "Districts judiciaires", zona_linguistica: "Zones linguistiques (Navarre)", legegile_barrutia: "Circonscriptions législatives (Iparralde)", euskara_eremua: "Zones selon la connaissance du basque",
-      kantonamendua: "Cantons (Iparralde)", muni: "Communes", sec: "Sections électorales" },
+      kantonamendua: "Cantons (Iparralde)", muni: "Communes", sec: "Sections (recensement) · bureaux de vote" },
     blokeak: { "Ezker subiranista": "Gauche souverainiste", "EAJ": "EAJ-PNB-Geroa Bai", "Alderdi Sozialista": "Parti socialiste", "Ezker estatala": "Gauches nationales",
       "EH Bai + Ezkerrak": "EH Bai + gauches", "Zentroa": "Centre", "Eskuina": "Droite", "Ultra eskuina": "Extrême droite" },
     zonak: { Azkenak: "Dernières", "Euskal Herria": "Euskal Herria", Hegoalde: "Hegoalde", Iparralde: "Iparralde" },
@@ -227,7 +229,7 @@ const TESTUAK = {
     hizkuntza: "Langue", kokapena: "Emplacement", lasterbideakIzenb: "Raccourcis clavier (?)", hauteskundea: "Élection",
     satelitea: "Satellite", sateliteaIzenb: "Afficher / masquer la carte satellite (S)", mapaAria: "Carte d'Euskal Herria",
     tresnakIzenb: "Masquer / afficher les outils (L)", bilatu: "Rechercher", udalerriaPh: "Commune…", bilatuUdalerria: "Rechercher une commune",
-    mapaModua: "Mode de la carte", irabazlea: "Vainqueur", lehianEremuak: "Zones serrées", konparatuBiUrte: "Comparer deux années",
+    mapaModua: "Couche de la carte", irabazlea: "Vainqueur", lehianEremuak: "Zones serrées", konparatuBiUrte: "Comparer deux années",
     udalForu: "Écart municipales / forales", ufselAria: "Écart municipales / forales : parti", eremua: "Échelle", automatikoa: "Automatique (selon le zoom)",
     panela: "Panneau", emaitzak: "Résultats", denboraLerroa: "Frise chronologique", azkenHauteskundeak: "Dernières élections",
     lasterbideak: "Raccourcis", itxi: "Fermer", kargatzen: "Chargement…", errorea: "Erreur",
@@ -280,7 +282,7 @@ const TESTUAK = {
   },
   en: {
     erakundeak: {"Eusko Legebiltzarra": "Basque Parliament", "Nafarroako Parlamentua": "Parliament of Navarre", "Arabako Batzar Nagusiak": "General Assembly of Araba", "Bizkaiko Batzar Nagusiak": "General Assembly of Bizkaia", "Gipuzkoako Batzar Nagusiak": "General Assembly of Gipuzkoa", "Diputatuen Kongresua (Hegoaldea)": "Spanish Congress (Hegoalde)"},
-    kat: { udal: "Local", autonomikoak: "Regional", foralak: "Provincial", estatu: "State", europa: "European" },
+    kat: { udal: "Local", autonomikoak: "Regional", foralak: "Foral", estatu: "State", europa: "European" },
     mota: { municipales: "Local", generales: "Spanish general", legislativas: "French legislative", presidenciales: "French presidential",
       regionales: "French regional", departamentales: "Departmental", europeas: "European", autonomicas: "Regional",
       "autonomicas|EAE": "Basque Parliament", "autonomicas|Nafarroa": "Parliament of Navarre", forales: "General Assemblies" },
@@ -299,11 +301,11 @@ const TESTUAK = {
     hizkuntza: "Language", kokapena: "Location", lasterbideakIzenb: "Keyboard shortcuts (?)", hauteskundea: "Election",
     satelitea: "Satellite", sateliteaIzenb: "Show / hide the satellite map (S)", mapaAria: "Map of Euskal Herria",
     tresnakIzenb: "Hide / show tools (L)", bilatu: "Search", udalerriaPh: "Municipality…", bilatuUdalerria: "Search municipality",
-    mapaModua: "Map mode", irabazlea: "Winner", lehianEremuak: "Close races", konparatuBiUrte: "Compare two years",
+    mapaModua: "Map layer", irabazlea: "Winner", lehianEremuak: "Close races", konparatuBiUrte: "Compare two years",
     udalForu: "Local / provincial gap", ufselAria: "Local / provincial gap: party", eremua: "Level", automatikoa: "Automatic (by zoom)",
     panela: "Panel", emaitzak: "Results", denboraLerroa: "Timeline", azkenHauteskundeak: "Latest elections",
     lasterbideak: "Shortcuts", itxi: "Close", kargatzen: "Loading…", errorea: "Error",
-    lagMota: "Map type: local, regional, provincial, state, European", lagQE: "Previous / next election",
+    lagMota: "Map type: local, regional, foral (provincial assemblies), state, European", lagQE: "Previous / next election",
     lagWMT: "Winner, close races, turnout", lagCU: "Compare two years, local / provincial gap", lagS: "Show / hide satellite",
     lagL: "Show / hide the left menu", lagK: "Results ↔ seats (in the panel)", lagP: "Play / stop the timeline",
     lagBilatu: "Search a municipality", lag0: "Show all of Euskal Herria", lagEsc: "Close the selection and windows",
@@ -315,7 +317,7 @@ const TESTUAK = {
     aldeaGuztira: "total gap", parteUdal: "local turnout", parteForu: "prov. turnout", aldea12: "1st–2nd gap", zerrendaIrekiak: "Open lists",
     udalLabur: "Loc.", foruLabur: "Prov.",
     ufAzalpenaEz: "Local elections are compared with their provincial-level counterpart: General Assemblies in the BAC and Parliament in Navarre (same day), cantonal elections in Iparralde (the nearest). Choose a local election, a General Assembly election, the Parliament of Navarre, a cantonal election or «Latest» in the Local / Provincial maps.",
-    ufIzenburua: "Local / provincial gap", partehartzeaIzenb: "Turnout", lehian: "Close race", marjinaLegenda: "Gap between first and second",
+    ufIzenburua: "Local / foral gap", partehartzeaIzenb: "Turnout", lehian: "Close race", marjinaLegenda: "Gap between first and second",
     irabazleaAldatu: "Winner changed", irabazleBera: "Same winner", hautagaitza: "Candidacy", hautagaitzaBakarra: "Single candidacy",
     alderdia: "Party", ufDaturikEz: "No data · local / provincial gap", ufDaturikEzTip: "No data to compute the local / provincial gap",
     aggOharra: "Votes added up by party family; local lists do not count towards the winner.",
@@ -389,7 +391,7 @@ const dfmt = (d) => d == null ? "" : `<span class="${d > 0 ? "up" : d < 0 ? "dow
 const BASE = (() => { let b = location.href.split(/[?#]/)[0]; if (/\.html?$/i.test(b)) b = b.slice(0, b.lastIndexOf("/") + 1); if (!b.endsWith("/")) b += "/"; return b; })();
 // Huella del contenido de data/ y geo/ (la pone build_map.py). Va en la URL de cada fichero: si los
 // datos cambian, cambia la URL y el navegador no reutiliza la copia vieja de su caché.
-const VERSION = "18bbbeaa2f34";
+const VERSION = "27fe9a7f17d8";
 // Los datos se cargan con fetch() desde el propio sitio (Cloudflare Pages o python -m http.server)
 const load = async (u) => {
   const r = await fetch(new URL(`${u}?v=${VERSION}`, BASE).href, { cache: "force-cache" });

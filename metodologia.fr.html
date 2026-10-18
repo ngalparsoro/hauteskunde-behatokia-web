@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.maps.eox.at https://www.ign.es https://data.geopf.fr; connect-src 'self' https://tiles.maps.eox.at https://www.ign.es https://data.geopf.fr https://cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; worker-src 'self'; style-src 'self' 'unsafe-inline'; style-src-elem 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data: blob: https://tiles.maps.eox.at https://www.ign.es https://data.geopf.fr; connect-src 'self' https://tiles.maps.eox.at https://www.ign.es https://data.geopf.fr https://cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Méthodologie · Hauteskunde Behatokia</title>
 <meta name="description" content="Comment les données sont traitées : territoire, blocs politiques, Hegoalde et Iparralde sur la même carte, sièges et limites connues.">
@@ -26,7 +27,7 @@
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "38ccd8c98963474691d8242a9b54083e"}'></script>
 </head>
 <body>
-<link rel="stylesheet" href="estiloa.css?v=18bbbeaa2f34">
+<link rel="stylesheet" href="estiloa.css?v=27fe9a7f17d8">
 
 <div class="orria">
   <header class="orri-goiburua">
@@ -166,7 +167,8 @@
   <p>Les municipales sont comparées à leur équivalent « foral » dans chaque zone : Juntes générales en CAB et Parlement en Navarre (le même
   jour que les municipales : 2011, 2015, 2019, 2023), et cantonales (départementales) en Iparralde, les plus proches dans le temps
   (2014 ↔ 2015, 2020 ↔ 2021, 2026 ↔ 2021). Pour chaque parti ou bloc : % aux municipales − % à l'équivalent « foral ».
-  « Total » est le pourcentage de voix qui change (la moitié de la somme des écarts absolus).</p>
+  « Total » est le pourcentage de voix qui change (la moitié de la somme des écarts absolus). Par exemple, à Donostia en 2023,
+  EAJ-PNV a obtenu 28,5 % aux municipales et 31,5 % aux Juntes générales : écart, −3,0 points ; EH Bildu, 27,2 % et 26,9 % : +0,3.</p>
   <p>Les listes locales comptent comme un seul groupe. Les zones où le vote municipal va presque entièrement (95 % ou plus) à des listes non
   classées ne sont pas comparables et apparaissent hachurées : c'est le cas de la plupart des villages d'Iparralde, dont les listes municipales n'ont pas d'étiquette.
   Bayonne, Anglet et Boucau sont comparées comme une seule unité (additionnées dans les deux élections) : les cantons coupent Bayonne et
