@@ -395,7 +395,7 @@ const dfmt = (d) => d == null ? "" : `<span class="${d > 0 ? "up" : d < 0 ? "dow
 const BASE = (() => { let b = location.href.split(/[?#]/)[0]; if (/\.html?$/i.test(b)) b = b.slice(0, b.lastIndexOf("/") + 1); if (!b.endsWith("/")) b += "/"; return b; })();
 // Huella del contenido de data/ y geo/ (la pone build_map.py). Va en la URL de cada fichero: si los
 // datos cambian, cambia la URL y el navegador no reutiliza la copia vieja de su caché.
-const VERSION = "5a5116f73c9e";
+const VERSION = "7e6cda59c118";
 // Los datos se cargan con fetch() desde el propio sitio (Cloudflare Pages o python -m http.server)
 const load = async (u) => {
   const r = await fetch(new URL(`${u}?v=${VERSION}`, BASE).href, { cache: "force-cache" });
@@ -1104,15 +1104,17 @@ function argibidea(id) {
   const rows = lehiakideak.map(c => `<div class="tt-row"><span><i class="sq" style="background:${FAM[c[1]] || FAM.LOCAL}"></i> ${short(c[0])}</span><span>${pct(c[3])} ${dfmt(delta(id, c))}</span></div>`).join("");
   return `<div class="tt-name">${esc(r.n) || name}</div><div class="tt-muted">${r.t || ""}${r.nm ? ` · ${r.nm} ${T.udalerri}` : ""} · ${T.partehartzea} ${partTestua(r)}</div>${rows}${batera ? `<div class="tt-huts">${T.sekzioBatera} ${batera}</div>` : ""}`;
 }
-// Participación con el voto exterior (CERA, territorios y total) y, entre paréntesis, la de los residentes (la del mapa)
+// Puntero: participación con el voto exterior (CERA, territorios y total) y, entre paréntesis, la de los residentes (la del mapa)
 const partTestua = (r) => `${pct(r.part)}${r.pE != null ? ` (${T.egoiliarrak} ${pct(r.pE)})` : ""}`;
-// ▲▼ de la participación con la misma base: las dos con CERA o, si a una le falta, las dos de residentes
-function partAldea(r, a) {
-  if (!r || !a) return "";
-  const [x, y] = r.pE != null && a.pE != null ? [r.part, a.part] : [r.pE ?? r.part, a.pE ?? a.part];
-  return x != null && y != null ? dfmt(Math.round((x - y) * 10) / 10) : "";
+// Recuadro de la participación: la oficial y, con voto exterior, debajo y con su propia cifra, la de los residentes (la
+// del mapa). ▲▼ con la misma base: la oficial solo frente a otra oficial; la de residentes, siempre
+const aldea = (x, y) => x != null && y != null ? dfmt(Math.round((x - y) * 10) / 10) : "";
+function partKpi(r, a) {
+  const egoiliar = (x) => x && (x.pE ?? x.part);
+  const d = !a ? "" : r.pE != null ? (a.pE != null ? aldea(r.part, a.part) : "") : aldea(r.part, egoiliar(a));
+  return `<div class="kpi"><div class="v">${pct(r.part)} ${d}</div><div class="k">${T.partehartzea}</div>` +
+    (r.pE != null ? `<div class="v v2">${pct(r.pE)} ${a ? aldea(r.pE, egoiliar(a)) : ""}</div><div class="k">${T.egoiliarrak}</div>` : "") + "</div>";
 }
-const partKpi = (r, a) => `<div class="kpi"><div class="v">${pct(r.part)} ${partAldea(r, a)}</div><div class="k">${T.partehartzea}${r.pE != null ? ` · ${T.egoiliarrak} ${pct(r.pE)}` : ""}</div></div>`;
 function legenda() { return legendaModua() + `<div class="legend"><div class="li"><i class="sq marra"></i>${T.hutsaLegenda}</div></div>`; }
 function legendaModua() {
   if (state.modua === "udalforal") return `<div class="lbl">${T.ufIzenburua} (${state.ufAlderdia === "__guztira" ? T.botoAldaketaOsoa : short(state.ufAlderdia)})</div><div class="legend">${[`0 – 2 ${T.puntu}`,"2 – 4","4 – 6","6 – 8","> 8"].map((l,i)=>`<div class="li"><i class="sq" style="background:${UF_BINS[i][1]}"></i>${l}</div>`).join("")}</div>
