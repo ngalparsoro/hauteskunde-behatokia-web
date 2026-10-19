@@ -99,10 +99,11 @@ const TESTUAK = {
     aldeaGuztira: "aldea guztira", parteUdal: "parte-h. udal.", parteForu: "parte-h. foru.", aldea12: "aldea 1.–2.", zerrendaIrekiak: "Zerrenda irekiak",
     udalLabur: "Udal.", foruLabur: "Foru.",
     ufAzalpenaEz: "Udal hauteskundeak foru-pareko hauteskundeekin konparatzen dira: EAEn Batzar Nagusiak eta Nafarroan Parlamentua (egun berean), Iparraldean kantonalak (hurbilenak). Aukeratu udal hauteskunde bat, Batzar Nagusiak, Nafarroako Parlamentua, kantonalak edo «Azkenak» Udalak / Foralak mapetan.",
-    ufIzenburua: "Udal / foru aldea", partehartzeaIzenb: "Parte-hartzea", lehian: "Lehian", marjinaLegenda: "Lehenengo eta bigarrenaren arteko aldea",
+    ufIzenburua: "Udal / foru aldea", partehartzeaIzenb: "Egoiliarren parte-hartzea", lehian: "Lehian", marjinaLegenda: "Lehenengo eta bigarrenaren arteko aldea",
     irabazleaAldatu: "Irabazlea aldatu da", irabazleBera: "Irabazle bera", hautagaitza: "Hautagaitza", hautagaitzaBakarra: "Hautagaitza bakarra",
     alderdia: "Alderdia", ufDaturikEz: "Daturik ez · udal / foru aldea", ufDaturikEzTip: "Daturik ez udal / foru aldea kalkulatzeko",
     aggOharra: "Botoak familiaka batuta; tokiko zerrendak ez dira irabazle-kalkuluan sartzen.",
+    ceraLbl: "Atzerriko botoa (CERA)", egoiliarrak: "egoiliarrak", ceraBarne: "Goiko emaitzetan batuta dago (lurraldeetan eta guztira). Mapako parte-hartzearen geruzak ez du barne hartzen (egoiliarrak).",
     ufAzalpena: "Alderdi edo bloke berak udal hauteskundeetan eta foru-parekoetan jasotako botoen aldea: EAEn Batzar Nagusiak eta Nafarroan Parlamentua (egun berean), Iparraldean kantonal hurbilenak. «Guztira»: aldeen batura erdia, hau da, bozkatzaileen zein zatik bozkatu duen bestela.",
     botoAldaketaOsoa: "boto aldaketa osoa", guztiraAukera: "Guztira (boto aldaketa osoa)",
     ikuspegiaAzalpena: "Hegoaldea alderdika; Euskal Herri osoa eta Iparraldea blokeka (Iparraldeko udal hauteskundeak izan ezik, zerrendaka).",
@@ -118,7 +119,7 @@ const TESTUAK = {
     tokikoak: "Tokiko zerrendak", gainontzekoak: "Gainontzekoak", iparraldea: "Iparraldea", daturikEz: "Daturik ez",
     tresnakEzkutatu: "Tresnak ezkutatu", tresnakErakutsi: "Tresnak erakutsi",
     // escaños
-    panelaZabaldu: "Panela zabaldu / tolestu", irudia: "Irudia", irudiaIzenb: "Mapa irudi gisa deskargatu (PNG), partekatzeko", irudiaPrest: "Irudia deskargatuta", irudiaEzin: "Ezin izan da irudia sortu", ufEzin: "Ezin da konparatu: udal botoa ia osorik sailkatu gabeko zerrendetakoa da (alderdirik gabe)", ufForua: "foru-parekoa", bilakaera: "Bilakaera", bilakaeraHautatu: "Hautatu udalerri bat mapan 2011tik nola bozkatu duen ikusteko.", bilakaeraGrafikoa: "Botoen bilakaera", partaidetza: "Parte-hartzea", zinegotziakLabur: "Zineg.", bozkenEhunekoa: "Botoen %", hauteskundez: "Hauteskundez hauteskunde",
+    panelaZabaldu: "Panela zabaldu / tolestu", irudia: "Irudia", irudiaIzenb: "Mapa irudi gisa deskargatu (PNG), partekatzeko", irudiaPrest: "Irudia deskargatuta", irudiaEzin: "Ezin izan da irudia sortu", ufEzin: "Ezin da konparatu: udal botoa ia osorik sailkatu gabeko zerrendetakoa da (alderdirik gabe)", ufForua: "foru-parekoa", bilakaera: "Bilakaera", bilakaeraHautatu: "Hautatu eremu bat mapan 2011tik nola bozkatu duen ikusteko.", bilCera: "Egoiliarren parte-hartzea; ehunekoak atzerriko botoarekin (CERA), iturriak ematen duenean.", bilakaeraGrafikoa: "Botoen bilakaera", partaidetza: "Parte-hartzea", zinegotziakLabur: "Zineg.", bozkenEhunekoa: "Botoen %", hauteskundez: "Hauteskundez hauteskunde",
     eserlekuak: "Eserlekuak", gehiengoa: "Gehiengo osoa", barrutika: "Barrutika", udala: "udala", herrialdeka: "Herrialdeka",
     zinegotziakEH: "Zinegotziak Euskal Herrian (blokeka)", zinegotziak: "Zinegotziak",
     eserlekurikEzHemen: "Hautatutako eremuak ez du eserlekurik erakunde hauetan (Iparraldean, bigarren itzulian erabakitzen dira).",
@@ -173,10 +174,11 @@ const TESTUAK = {
     aldeaGuztira: "diferencia total", parteUdal: "particip. munic.", parteForu: "particip. forales", aldea12: "diferencia 1.º–2.º", zerrendaIrekiak: "Listas abiertas",
     udalLabur: "Mun.", foruLabur: "For.",
     ufAzalpenaEz: "Las municipales se comparan con su equivalente foral: Juntas Generales en la CAV y Parlamento en Navarra (el mismo día), cantonales en Iparralde (las más cercanas). Elige unas municipales, unas Juntas Generales, el Parlamento de Navarra, unas cantonales o «Últimas» en los mapas Municipales / Forales.",
-    ufIzenburua: "Diferencia municipales / forales", partehartzeaIzenb: "Participación", lehian: "Reñido", marjinaLegenda: "Diferencia entre el primero y el segundo",
+    ufIzenburua: "Diferencia municipales / forales", partehartzeaIzenb: "Participación de residentes", lehian: "Reñido", marjinaLegenda: "Diferencia entre el primero y el segundo",
     irabazleaAldatu: "Ha cambiado el ganador", irabazleBera: "Mismo ganador", hautagaitza: "Candidatura", hautagaitzaBakarra: "Candidatura única",
     alderdia: "Partido", ufDaturikEz: "Sin datos · diferencia municipales / forales", ufDaturikEzTip: "Sin datos para calcular la diferencia municipales / forales",
     aggOharra: "Votos sumados por familias; las listas locales no cuentan para calcular el ganador.",
+    ceraLbl: "Voto exterior (CERA)", egoiliarrak: "residentes", ceraBarne: "Ya está sumado en los resultados de arriba (territorios y total). La capa de participación del mapa va sin él (residentes).",
     ufAzalpena: "Diferencia entre los votos de un mismo partido o bloque en las municipales y en su equivalente foral: Juntas Generales en la CAV y Parlamento en Navarra (el mismo día), cantonales más cercanas en Iparralde. «Total»: la mitad de la suma de las diferencias, es decir, la parte del electorado que votó distinto.",
     botoAldaketaOsoa: "cambio total de voto", guztiraAukera: "Total (cambio total de voto)",
     ikuspegiaAzalpena: "Hegoalde por partidos; Euskal Herria entera e Iparralde por bloques (salvo las municipales de Iparralde, por listas).",
@@ -191,7 +193,7 @@ const TESTUAK = {
     kantonamenduAzalpena: "Baiona y Angelu están repartidos entre varios cantones: en el mapa aparecen juntos, con Bokale, y aquí el resultado oficial de cada cantón, sumado mesa a mesa.",
     tokikoak: "Listas locales", gainontzekoak: "Otros", iparraldea: "Iparralde", daturikEz: "Sin datos",
     tresnakEzkutatu: "Ocultar herramientas", tresnakErakutsi: "Mostrar herramientas",
-    panelaZabaldu: "Abrir / cerrar el panel", irudia: "Imagen", irudiaIzenb: "Descargar el mapa como imagen (PNG) para compartir", irudiaPrest: "Imagen descargada", irudiaEzin: "No se ha podido crear la imagen", ufEzin: "No comparable: el voto municipal es casi todo de listas sin clasificar (sin partidos)", ufForua: "equivalente foral", bilakaera: "Evolución", bilakaeraHautatu: "Selecciona un municipio en el mapa para ver cómo ha votado desde 2011.", bilakaeraGrafikoa: "Evolución del voto", partaidetza: "Participación", zinegotziakLabur: "Conc.", bozkenEhunekoa: "% de voto", hauteskundez: "Elección a elección",
+    panelaZabaldu: "Abrir / cerrar el panel", irudia: "Imagen", irudiaIzenb: "Descargar el mapa como imagen (PNG) para compartir", irudiaPrest: "Imagen descargada", irudiaEzin: "No se ha podido crear la imagen", ufEzin: "No comparable: el voto municipal es casi todo de listas sin clasificar (sin partidos)", ufForua: "equivalente foral", bilakaera: "Evolución", bilakaeraHautatu: "Selecciona una zona en el mapa para ver cómo ha votado desde 2011.", bilCera: "Participación de residentes; porcentajes con el voto exterior (CERA) donde la fuente lo da.", bilakaeraGrafikoa: "Evolución del voto", partaidetza: "Participación", zinegotziakLabur: "Conc.", bozkenEhunekoa: "% de voto", hauteskundez: "Elección a elección",
     eserlekuak: "Escaños", gehiengoa: "Mayoría absoluta", barrutika: "Por circunscripción", udala: "ayuntamiento", herrialdeka: "Por territorio",
     zinegotziakEH: "Concejales en Euskal Herria (por bloques)", zinegotziak: "Concejales",
     eserlekurikEzHemen: "La zona seleccionada no tiene escaños en estas instituciones (en Iparralde se deciden en segunda vuelta).",
@@ -245,10 +247,11 @@ const TESTUAK = {
     aldeaGuztira: "écart total", parteUdal: "particip. munic.", parteForu: "particip. forales", aldea12: "écart 1er–2e", zerrendaIrekiak: "Listes ouvertes",
     udalLabur: "Mun.", foruLabur: "For.",
     ufAzalpenaEz: "Les municipales sont comparées à leur équivalent « foral » : Juntes générales en CAB et Parlement en Navarre (le même jour), cantonales en Iparralde (les plus proches). Choisissez des municipales, des Juntes générales, le Parlement de Navarre, des cantonales ou « Dernières » dans les cartes Municipales / Forales.",
-    ufIzenburua: "Écart municipales / forales", partehartzeaIzenb: "Participation", lehian: "Serré", marjinaLegenda: "Écart entre le premier et le deuxième",
+    ufIzenburua: "Écart municipales / forales", partehartzeaIzenb: "Participation des résidents", lehian: "Serré", marjinaLegenda: "Écart entre le premier et le deuxième",
     irabazleaAldatu: "Le vainqueur a changé", irabazleBera: "Même vainqueur", hautagaitza: "Candidature", hautagaitzaBakarra: "Candidature unique",
     alderdia: "Parti", ufDaturikEz: "Pas de données · écart municipales / forales", ufDaturikEzTip: "Pas de données pour calculer l'écart municipales / forales",
     aggOharra: "Voix additionnées par familles ; les listes locales ne comptent pas pour le vainqueur.",
+    ceraLbl: "Vote des résidents à l'étranger (CERA)", egoiliarrak: "résidents", ceraBarne: "Déjà inclus dans les résultats ci-dessus (territoires et total). La couche de participation de la carte ne le compte pas (résidents).",
     ufAzalpena: "Écart entre les voix d'un même parti ou bloc aux municipales et à leur équivalent « foral » : Juntes générales en CAB et Parlement en Navarre (le même jour), cantonales les plus proches en Iparralde. « Total » : la moitié de la somme des écarts, c'est-à-dire la part de l'électorat qui a voté différemment.",
     botoAldaketaOsoa: "changement de vote total", guztiraAukera: "Total (changement de vote total)",
     ikuspegiaAzalpena: "Hegoalde par partis ; Euskal Herria entier et Iparralde par blocs (sauf les municipales d'Iparralde, par listes).",
@@ -263,7 +266,7 @@ const TESTUAK = {
     kantonamenduAzalpena: "Bayonne et Anglet sont partagées entre plusieurs cantons : sur la carte elles apparaissent ensemble, avec Boucau, et ici le résultat officiel de chaque canton, additionné bureau par bureau.",
     tokikoak: "Listes locales", gainontzekoak: "Autres", iparraldea: "Iparralde", daturikEz: "Pas de données",
     tresnakEzkutatu: "Masquer les outils", tresnakErakutsi: "Afficher les outils",
-    panelaZabaldu: "Ouvrir / fermer le panneau", irudia: "Image", irudiaIzenb: "Télécharger la carte en image (PNG) pour la partager", irudiaPrest: "Image téléchargée", irudiaEzin: "Impossible de créer l'image", ufEzin: "Non comparable : le vote municipal va presque entièrement à des listes non classées (sans partis)", ufForua: "équivalent foral", bilakaera: "Évolution", bilakaeraHautatu: "Sélectionnez une commune sur la carte pour voir comment elle a voté depuis 2011.", bilakaeraGrafikoa: "Évolution du vote", partaidetza: "Participation", zinegotziakLabur: "Cons.", bozkenEhunekoa: "% des voix", hauteskundez: "Élection par élection",
+    panelaZabaldu: "Ouvrir / fermer le panneau", irudia: "Image", irudiaIzenb: "Télécharger la carte en image (PNG) pour la partager", irudiaPrest: "Image téléchargée", irudiaEzin: "Impossible de créer l'image", ufEzin: "Non comparable : le vote municipal va presque entièrement à des listes non classées (sans partis)", ufForua: "équivalent foral", bilakaera: "Évolution", bilakaeraHautatu: "Sélectionnez une zone sur la carte pour voir comment elle a voté depuis 2011.", bilCera: "Participation des résidents ; pourcentages avec le vote de l'étranger (CERA) quand la source le donne.", bilakaeraGrafikoa: "Évolution du vote", partaidetza: "Participation", zinegotziakLabur: "Cons.", bozkenEhunekoa: "% des voix", hauteskundez: "Élection par élection",
     eserlekuak: "Sièges", gehiengoa: "Majorité absolue", barrutika: "Par circonscription", udala: "conseil municipal", herrialdeka: "Par province",
     zinegotziakEH: "Conseillers municipaux en Euskal Herria (par blocs)", zinegotziak: "Conseillers municipaux",
     eserlekurikEzHemen: "La zone sélectionnée n'a pas de sièges dans ces institutions (en Iparralde, ils se décident au second tour).",
@@ -317,10 +320,11 @@ const TESTUAK = {
     aldeaGuztira: "total gap", parteUdal: "local turnout", parteForu: "prov. turnout", aldea12: "1st–2nd gap", zerrendaIrekiak: "Open lists",
     udalLabur: "Loc.", foruLabur: "Prov.",
     ufAzalpenaEz: "Local elections are compared with their provincial-level counterpart: General Assemblies in the BAC and Parliament in Navarre (same day), cantonal elections in Iparralde (the nearest). Choose a local election, a General Assembly election, the Parliament of Navarre, a cantonal election or «Latest» in the Local / Provincial maps.",
-    ufIzenburua: "Local / foral gap", partehartzeaIzenb: "Turnout", lehian: "Close race", marjinaLegenda: "Gap between first and second",
+    ufIzenburua: "Local / foral gap", partehartzeaIzenb: "Turnout of residents", lehian: "Close race", marjinaLegenda: "Gap between first and second",
     irabazleaAldatu: "Winner changed", irabazleBera: "Same winner", hautagaitza: "Candidacy", hautagaitzaBakarra: "Single candidacy",
     alderdia: "Party", ufDaturikEz: "No data · local / provincial gap", ufDaturikEzTip: "No data to compute the local / provincial gap",
     aggOharra: "Votes added up by party family; local lists do not count towards the winner.",
+    ceraLbl: "Vote from abroad (CERA)", egoiliarrak: "residents", ceraBarne: "Already added to the results above (territories and total). The map's turnout layer leaves it out (residents only).",
     ufAzalpena: "Gap between the votes of the same party or bloc in local elections and in their provincial-level counterpart: General Assemblies in the BAC and Parliament in Navarre (same day), the nearest cantonal elections in Iparralde. «Total»: half the sum of the gaps, i.e. the share of voters who voted differently.",
     botoAldaketaOsoa: "total vote shift", guztiraAukera: "Total (total vote shift)",
     ikuspegiaAzalpena: "Hegoalde by party; all of Euskal Herria and Iparralde by bloc (except local elections in Iparralde, by list).",
@@ -335,7 +339,7 @@ const TESTUAK = {
     kantonamenduAzalpena: "Baiona and Angelu are split between several cantons: on the map they appear together, with Bokale, and here is each canton's official result, added up polling station by polling station.",
     tokikoak: "Local lists", gainontzekoak: "Others", iparraldea: "Iparralde", daturikEz: "No data",
     tresnakEzkutatu: "Hide tools", tresnakErakutsi: "Show tools",
-    panelaZabaldu: "Open / close the panel", irudia: "Image", irudiaIzenb: "Download the map as an image (PNG) to share", irudiaPrest: "Image downloaded", irudiaEzin: "Could not create the image", ufEzin: "Not comparable: almost all the local vote went to unclassified lists (no parties)", ufForua: "provincial counterpart", bilakaera: "Trend", bilakaeraHautatu: "Select a municipality on the map to see how it has voted since 2011.", bilakaeraGrafikoa: "Vote trend", partaidetza: "Turnout", zinegotziakLabur: "Cllrs", bozkenEhunekoa: "Vote %", hauteskundez: "Election by election",
+    panelaZabaldu: "Open / close the panel", irudia: "Image", irudiaIzenb: "Download the map as an image (PNG) to share", irudiaPrest: "Image downloaded", irudiaEzin: "Could not create the image", ufEzin: "Not comparable: almost all the local vote went to unclassified lists (no parties)", ufForua: "provincial counterpart", bilakaera: "Trend", bilakaeraHautatu: "Select an area on the map to see how it has voted since 2011.", bilCera: "Turnout of residents; percentages include the vote from abroad (CERA) where the source gives it.", bilakaeraGrafikoa: "Vote trend", partaidetza: "Turnout", zinegotziakLabur: "Cllrs", bozkenEhunekoa: "Vote %", hauteskundez: "Election by election",
     eserlekuak: "Seats", gehiengoa: "Absolute majority", barrutika: "By constituency", udala: "council", herrialdeka: "By province",
     zinegotziakEH: "Councillors in Euskal Herria (by bloc)", zinegotziak: "Councillors",
     eserlekurikEzHemen: "The selected area has no seats in these institutions (in Iparralde they are decided in the second round).",
@@ -391,7 +395,7 @@ const dfmt = (d) => d == null ? "" : `<span class="${d > 0 ? "up" : d < 0 ? "dow
 const BASE = (() => { let b = location.href.split(/[?#]/)[0]; if (/\.html?$/i.test(b)) b = b.slice(0, b.lastIndexOf("/") + 1); if (!b.endsWith("/")) b += "/"; return b; })();
 // Huella del contenido de data/ y geo/ (la pone build_map.py). Va en la URL de cada fichero: si los
 // datos cambian, cambia la URL y el navegador no reutiliza la copia vieja de su caché.
-const VERSION = "27fe9a7f17d8";
+const VERSION = "5a5116f73c9e";
 // Los datos se cargan con fetch() desde el propio sitio (Cloudflare Pages o python -m http.server)
 const load = async (u) => {
   const r = await fetch(new URL(`${u}?v=${VERSION}`, BASE).href, { cache: "force-cache" });
@@ -576,6 +580,8 @@ function ehErregistroa(k) {
 function batu(rs) {  // suma de resúmenes (agg.eh) de varias convocatorias
   const S = (f) => rs.reduce((a, r) => a + (f(r) || 0), 0);
   const censo = S(r => r.censo), vc = S(r => r.vc), votantes = S(r => r.part * r.censo / 100);
+  // con voto exterior en alguna: la participación de los residentes, sin él (la de la capa del mapa)
+  const ce = rs.some(r => r.ce) ? [S(r => r.ce && r.ce[0]), S(r => r.ce && r.ce[1])] : null;
   const junta = (listas, wons) => {
     const v = new Map(), won = {};
     listas.forEach(l => l.forEach(c => v.set(c[0], (v.get(c[0]) || 0) + c[2])));
@@ -587,6 +593,7 @@ function batu(rs) {  // suma de resúmenes (agg.eh) de varias convocatorias
   };
   return { n: "Euskal Herria", t: "Euskal Herria", pob: S(r => r.pob), censo, vc, esc: S(r => r.esc), nm: S(r => r.nm), la: false,
            part: censo ? Math.round(10000 * votantes / censo) / 100 : null,
+           ...(ce && censo > ce[0] ? { ce, pE: Math.round(10000 * (votantes - ce[1]) / (censo - ce[0])) / 100 } : {}),
            ...junta(rs.map(r => r.c), rs.map(r => r.won)), B: junta(rs.map(r => r.B.c), rs.map(r => r.B.won)) };
 }
 // ---- vista por blokeenIkuspegia (Ezker subiranista, Eskuina…), común a Hegoalde e Iparralde ----
@@ -789,7 +796,7 @@ function color(level, id) {
   const r = erregistroa(level, id);
   if (state.modua === "winner") return r ? FAM[r.gf] || FAM.LOCAL : NODATA;
   if (state.modua === "margin") return r ? (r.m == null ? UNCONTESTED : bin(r.m, MARGIN_BINS)) : NODATA;
-  if (state.modua === "turnout") return r ? bin(r.part, TURNOUT_BINS) : NODATA;
+  if (state.modua === "turnout") return r ? bin(r.pE ?? r.part, TURNOUT_BINS) : NODATA;  // la de los residentes, sin el CERA
   // konparatu: irabazlea aldatu den ala ez, aukeratutako bi hauteskundeen artean
   const oy = state.konparatu;
   if (!oy) return NODATA;
@@ -1095,8 +1102,17 @@ function argibidea(id) {
   // solo quien opta a gobernar: a LEHIA_MARJINA puntos o menos del primero
   const lehen = r.c[0] && r.c[0][3], lehiakideak = r.c.filter(c => c[3] != null && lehen != null && c[3] >= lehen - LEHIA_MARJINA);
   const rows = lehiakideak.map(c => `<div class="tt-row"><span><i class="sq" style="background:${FAM[c[1]] || FAM.LOCAL}"></i> ${short(c[0])}</span><span>${pct(c[3])} ${dfmt(delta(id, c))}</span></div>`).join("");
-  return `<div class="tt-name">${esc(r.n) || name}</div><div class="tt-muted">${r.t || ""}${r.nm ? ` · ${r.nm} ${T.udalerri}` : ""} · ${T.partehartzea} ${pct(r.part)}</div>${rows}${batera ? `<div class="tt-huts">${T.sekzioBatera} ${batera}</div>` : ""}`;
+  return `<div class="tt-name">${esc(r.n) || name}</div><div class="tt-muted">${r.t || ""}${r.nm ? ` · ${r.nm} ${T.udalerri}` : ""} · ${T.partehartzea} ${partTestua(r)}</div>${rows}${batera ? `<div class="tt-huts">${T.sekzioBatera} ${batera}</div>` : ""}`;
 }
+// Participación con el voto exterior (CERA, territorios y total) y, entre paréntesis, la de los residentes (la del mapa)
+const partTestua = (r) => `${pct(r.part)}${r.pE != null ? ` (${T.egoiliarrak} ${pct(r.pE)})` : ""}`;
+// ▲▼ de la participación con la misma base: las dos con CERA o, si a una le falta, las dos de residentes
+function partAldea(r, a) {
+  if (!r || !a) return "";
+  const [x, y] = r.pE != null && a.pE != null ? [r.part, a.part] : [r.pE ?? r.part, a.pE ?? a.part];
+  return x != null && y != null ? dfmt(Math.round((x - y) * 10) / 10) : "";
+}
+const partKpi = (r, a) => `<div class="kpi"><div class="v">${pct(r.part)} ${partAldea(r, a)}</div><div class="k">${T.partehartzea}${r.pE != null ? ` · ${T.egoiliarrak} ${pct(r.pE)}` : ""}</div></div>`;
 function legenda() { return legendaModua() + `<div class="legend"><div class="li"><i class="sq marra"></i>${T.hutsaLegenda}</div></div>`; }
 function legendaModua() {
   if (state.modua === "udalforal") return `<div class="lbl">${T.ufIzenburua} (${state.ufAlderdia === "__guztira" ? T.botoAldaketaOsoa : short(state.ufAlderdia)})</div><div class="legend">${[`0 – 2 ${T.puntu}`,"2 – 4","4 – 6","6 – 8","> 8"].map((l,i)=>`<div class="li"><i class="sq" style="background:${UF_BINS[i][1]}"></i>${l}</div>`).join("")}</div>
@@ -1127,9 +1143,9 @@ function laburpena() {
   const bakarEremua = bakarrikDa() && ["EAE", "Nafarroa"].includes(eremua(state.hauteskundea)) ? eremua(state.hauteskundea) : null;
   const izenburua = bakarEremua ? (bakarEremua === "EAE" ? T.zonaLabur.EAE : "Nafarroa") : eh.n;
   return `<div class="hdr"><div><h2>${esc(izenburua)}</h2><div class="meta">${T.motaLuzea[mota(state.hauteskundea)] || T.kat[state.mapa]} · ${zona(state.hauteskundea) === "Azkenak" ? izena(state.hauteskundea).replace(/^[^:]*: /, "") : urtea(state.hauteskundea)}${osag().izena ? ` + ${osag().izena}` : ""} · ${eh.nm} ${T.udalerri}</div></div></div>
-    <div class="kpis lau"><div class="kpi"><div class="v">${pct(eh.part)} ${ehAur && ehAur.part != null && eh.part != null ? dfmt(Math.round((eh.part - ehAur.part) * 10) / 10) : ""}</div><div class="k">${T.partehartzea}</div></div><div class="kpi"><div class="v">${fmt(bozkatzaileak)}</div><div class="k">${T.bozkatzaileak}</div></div><div class="kpi"><div class="v">${fmt(eh.censo)}</div><div class="k">${T.errolda}</div></div><div class="kpi"><div class="v">${eh.esc ? fmt(eh.esc) : "–"}</div><div class="k">${mota(state.hauteskundea) === "municipales" ? T.zinegotzi : T.eserleku}</div></div></div>
+    <div class="kpis lau">${partKpi(eh, ehAur)}<div class="kpi"><div class="v">${fmt(bozkatzaileak)}</div><div class="k">${T.bozkatzaileak}</div></div><div class="kpi"><div class="v">${fmt(eh.censo)}</div><div class="k">${T.errolda}</div></div><div class="kpi"><div class="v">${eh.esc ? fmt(eh.esc) : "–"}</div><div class="k">${mota(state.hauteskundea) === "municipales" ? T.zinegotzi : T.eserleku}</div></div></div>
     <div class="lbl">${ikuspegia("eh", estaldura()) === "blokeak" ? T.botoakBlokeka : T.botoakAlderdika} · ${fmt(eh.vc)} ${T.hautagaitzenBotoak}${aldera() ? ` · Δ ${aldera()}` : ""}</div>${filas}
-    <div class="lbl">${T.irabazitakoUdalerriak}${state.modua === "winner" ? ` · ${T.mapakoKoloreak}` : ""}</div>${won}${legenda()}`;
+    <div class="lbl">${T.irabazitakoUdalerriak}${state.modua === "winner" ? ` · ${T.mapakoKoloreak}` : ""}</div>${won}${ceraZatia("eh", estaldura(), eh)}${legenda()}`;
 }
 // Barrutiak de Iparralde: las candidaturas por su nombre y, en una zona con varios cantones, cada cantón oficial
 function ipaBarrutiak(id) {
@@ -1144,6 +1160,31 @@ function ipaBarrutiak(id) {
       ofizialak.map(k => `<div class="kanton"><b>${esc(k.n)}</b> <span class="meta">${pct(k.part)} ${T.partehartzea}</span>${k.c.slice(0, 3).map(lerroa).join("")}</div>`).join("");
   }
   return html;
+}
+// Voto exterior (CERA): ya sumado en los territorios y en el total (no en municipios, secciones ni comarcas); aquí, su
+// desglose: la elección elegida y sus complementos (cada territorio, del primero que lo trae); nada en las que no lo publican
+function ceraErregistroa(level, id) {
+  if (state.modua === "udalforal") return null;
+  const k = state.hauteskundea, ds = [k, ...osagK(k)].map(datuak).filter(d => d && d.cera);
+  if (level === "territorio") { const n = String(id).split("|")[1]; for (const d of ds) if (d.cera[n]) return d.cera[n]; return null; }
+  if (level !== "eh") return null;
+  const t = {};
+  ds.forEach(d => Object.entries(d.cera).forEach(([n, r]) => { if (!t[n]) t[n] = r; }));
+  const rs = Object.values(t); if (!rs.length) return null;
+  if (rs.length === 1) return rs[0];
+  const S = (f) => rs.reduce((a, r) => a + (f(r) || 0), 0);
+  const censo = rs.every(r => r.censo != null) ? S(r => r.censo) : null, bozk = S(r => r.bozk), vc = S(r => r.vc);
+  const v = new Map();
+  rs.forEach(r => r.c.forEach(c => { const x = v.get(c[0]); if (x) x[2] += c[2]; else v.set(c[0], [c[0], c[1], c[2]]); }));
+  const c = [...v.values()].sort((a, b) => b[2] - a[2]).map(x => [x[0], x[1], x[2], vc ? Math.round(10000 * x[2] / vc) / 100 : null]);
+  return { censo, bozk, vc, zb: S(r => r.zb), part: censo ? Math.round(10000 * bozk / censo) / 100 : null, c };
+}
+function ceraZatia(level, id, r) {
+  const c = ceraErregistroa(level, id); if (!c || !r) return "";
+  const filas = c.c.slice(0, 5).map(x => `<div class="row"><span class="nm"><i class="sq" style="background:${FAM[x[1]] || FAM.LOCAL}"></i>${esc(x[0])}</span><span class="val">${fmt(x[2])} · ${pct(x[3])}</span></div>`).join("");
+  return `<div class="rule"></div><div class="lbl">${T.ceraLbl}${level === "eh" && estaldura() === "EH" ? " · Hegoalde" : ""}</div>
+    <div class="kpis"><div class="kpi"><div class="v">${fmt(c.bozk)}</div><div class="k">${T.bozkatzaileak}</div></div><div class="kpi"><div class="v">${pct(c.part)}</div><div class="k">${T.partehartzea}</div></div><div class="kpi"><div class="v">${fmt(c.censo)}</div><div class="k">${T.errolda}</div></div></div>
+    ${filas}<p class="hint">${T.ceraBarne}</p>`;
 }
 function xehetasuna(id) {
   const r = erreg(id), name = NAME[id] || id, agg = !!(r && r.nm);
@@ -1179,10 +1220,10 @@ function xehetasuna(id) {
     tabla = r.c.map(c => `<div class="row"><span class="nm"><i class="sq" style="background:${FAM[c[1]] || FAM.LOCAL}"></i>${short(c[0])}</span><span class="val">${fmt(c[2])} · ${pct(c[3])} ${dfmt(delta(id, c))}${!agg && !esSec && mota(state.hauteskundea) === "municipales" ? ` · ${c[4]} z.` : ""}</span></div><div class="bar"><i style="width:${Math.min(100, c[3] || 0)}%;background:${FAM[c[1]] || FAM.LOCAL}"></i></div>`).join("");
   }
   return `<div class="hdr"><div><h2>${titulo}</h2><div class="meta">${sub}</div></div>${cierre}</div>
-    <div class="kpis"><div class="kpi"><div class="v">${pct(r.part)} ${pr0 && pr0.part != null && r.part != null ? dfmt(Math.round((r.part - pr0.part) * 10) / 10) : ""}</div><div class="k">${T.partehartzea}</div></div><div class="kpi"><div class="v">${fmt(r.censo)}</div><div class="k">${T.errolda}</div></div><div class="kpi"><div class="v">${pct(r.m)}</div><div class="k">${T.aldea12}</div></div></div>
+    <div class="kpis">${partKpi(r, pr0)}<div class="kpi"><div class="v">${fmt(r.censo)}</div><div class="k">${T.errolda}</div></div><div class="kpi"><div class="v">${pct(r.m)}</div><div class="k">${T.aldea12}</div></div></div>
     ${(r.m != null && r.m <= 10) || r.la ? `<div style="display:flex;gap:6px;flex-wrap:wrap">${r.m != null && r.m <= 10 ? `<span class="badge">${T.lehian}</span>` : ""}${r.la ? `<span class="badge">${T.zerrendaIrekiak}</span>` : ""}</div>` : ""}
     <div class="rule"></div>${tabla}${ipaBarrutiak(id)}
-    ${agg ? `<p class="hint">${T.aggOharra}</p>` : ""}`;
+    ${agg ? `<p class="hint">${T.aggOharra}</p>${ceraZatia(mailaAktiboa(), id, r)}` : ""}`;
 }
 function ogiApurrak() {
   const partes = [["Euskal Herria", () => { state.maila = "auto"; $("#level").value = "auto"; ezarriMaila(); map.fitBounds(MAPA.ehMugak, { padding: encuadre(), duration: 600 }); hautatu(null); }]];
@@ -1808,22 +1849,27 @@ function irudiaDeskargatu() {
   map.triggerRepaint();
 }
 $("#irudia").addEventListener("click", irudiaDeskargatu);
-// ---- Bilakaera: cómo ha votado un municipio desde 2011 (pestaña del panel de la derecha) ----
-// Los datos de cada municipio están en data/bilakaera/<id>.json (scripts/web_bilakaera.py): todas sus elecciones,
-// con el % y los escaños de cada familia. Se ve por tipo de mapa (Udalak, Autonomikoak…), el del mapa por defecto.
-const BILAKAERA = {};  // id → datos del municipio (o null si no hay)
+// ---- Bilakaera: cómo ha votado una zona desde 2011 (pestaña del panel de la derecha) ----
+// Los datos están en data/bilakaera/ (scripts/web_bilakaera.py): <id>.json cada municipio; maila/<nivel>.json las zonas
+// de un nivel agregado (territorios, comarcas…) y maila/eh.json el total. Todas sus elecciones, con el % (y los escaños)
+// de cada familia. Se ve por tipo de mapa (Udalak, Autonomikoak…), el del mapa por defecto.
+const BILAKAERA = {};  // fichero → datos (o null si no hay)
 let bilKat = null;     // tipo elegido en la ficha; null = el del mapa
 let bilMota = null;    // dentro del tipo, la elección (p. ej. legislativas o presidenciales en Iparralde)
 const BIL_GUTXIENEZ = 4, BIL_LERRO_MAX = 7;  // una familia sale en el gráfico si llega al 4 % alguna vez; como mucho 7
 
-function bilUdalerria() {  // municipio de lo seleccionado (un municipio o una de sus secciones / bulegos)
-  const id = state.hautatua; if (!id || String(id).includes("|")) return null;
-  const h = hautaketa(); return h.muni && MUNIS[h.muni] ? h.muni : null;
+// Lo que enseña la ficha: el municipio de lo seleccionado (un municipio o una de sus secciones / bulegos), la zona del
+// nivel del mapa (Bizkaia, Busturialdea…) o, sin nada elegido, el total. {fitx, gakoa (zona dentro del fichero), maila}
+function bilHautaketa() {
+  const id = state.hautatua;
+  if (!id) return { fitx: "maila/eh", gakoa: "EH", maila: "eh" };
+  if (String(id).includes("|")) { const l = mailaAktiboa(); return LEVELS[l] ? { fitx: `maila/${l}`, gakoa: String(id), maila: l } : null; }
+  const h = hautaketa(); return h.muni && MUNIS[h.muni] ? { fitx: h.muni, gakoa: null, maila: "muni" } : null;
 }
-function bilKargatu(id) {
-  if (id in BILAKAERA) return;
-  BILAKAERA[id] = undefined;  // cargando
-  load(`data/bilakaera/${id}.json`).then((d) => { BILAKAERA[id] = d; }).catch(() => { BILAKAERA[id] = null; })
+function bilKargatu(fitx) {
+  if (fitx in BILAKAERA) return;
+  BILAKAERA[fitx] = undefined;  // cargando
+  load(`data/bilakaera/${fitx}.json`).then((d) => { BILAKAERA[fitx] = d; }).catch(() => { BILAKAERA[fitx] = null; })
     .then(() => { if (state.fitxa === "bilakaera") margotu(); });
 }
 const bilIzena = (f, kat) => f === "LOCAL" ? (kat === "udal" ? T.tokikoak : T.gainontzekoak) : short(f);
@@ -1850,15 +1896,22 @@ function bilGrafikoa(ks, h, lerroak, kat) {
 const bilPct = (e, f) => { if (!e) return null; const r = e[3].find(x => x[0] === f); return r ? r[1] : null; };  // null: no se presentó
 
 function bilakaeraOrria() {
-  const id = bilUdalerria();
-  if (!id) return `<div class="hdr"><div><h2>${T.bilakaera}</h2></div></div><p class="hint">${T.bilakaeraHautatu}</p>`;
-  bilKargatu(id);
-  const d = BILAKAERA[id], buru = `<div class="hdr"><div><h2>${NAME[id] || esc(MUNIS[id].n)}</h2><div class="meta">${esc(MUNIS[id].t || "")} · ${T.bilakaera}</div></div></div>`;
-  if (d === undefined) return buru + `<p class="hint">${T.kargatzen}</p>`;
+  const b = bilHautaketa();
+  if (!b) return `<div class="hdr"><div><h2>${T.bilakaera}</h2></div></div><p class="hint">${T.bilakaeraHautatu}</p>`;
+  bilKargatu(b.fitx);
+  const f = BILAKAERA[b.fitx], d = f && b.gakoa ? f[b.gakoa] : f;
+  const id = state.hautatua, muni = b.maila === "muni";
+  const izenburua = muni ? NAME[b.fitx] || esc(MUNIS[b.fitx].n) : b.maila === "eh" ? "Euskal Herria" : NAME[id] || esc(String(id).split("|")[1]);
+  const meta = muni ? esc(MUNIS[b.fitx].t || "") : b.maila === "eh" ? "" : esc(T.mailak[b.maila] || LEVELS[b.maila]);
+  const buru = `<div class="hdr"><div><h2>${izenburua}</h2><div class="meta">${meta ? meta + " · " : ""}${T.bilakaera}</div></div></div>`;
+  if (f === undefined) return buru + `<p class="hint">${T.kargatzen}</p>`;
   if (!d) return buru + `<p class="hint">${T.daturikEz}</p>`;
-  const katak = KATS.filter(t => INDEX.kategoriak[t].some(k => d.h[k]));
-  const kat = katak.includes(bilKat || state.mapa) ? (bilKat || state.mapa) : katak[0];
-  let ks = INDEX.kategoriak[kat].filter(k => d.h[k]).sort((a, b) => dataZ(a) - dataZ(b));
+  // el total y las zonas de toda Euskal Herria van por mapa (cada elección con sus complementos); el resto, por elección
+  const hOf = (t) => d.hk ? d.hk[t] || {} : d.h;
+  const katak = KATS.filter(t => INDEX.kategoriak[t].some(k => hOf(t)[k]));
+  if (!katak.length) return buru + `<p class="hint">${T.daturikEz}</p>`;
+  const kat = katak.includes(bilKat || state.mapa) ? (bilKat || state.mapa) : katak[0], H = hOf(kat);
+  let ks = INDEX.kategoriak[kat].filter(k => H[k]).sort((a, b) => dataZ(a) - dataZ(b));
   // Varias elecciones en el mismo tipo (Iparralde: legislativas y presidenciales…): una línea por elección, no mezcladas
   const motak = [...new Set(ks.map(mota))];
   const zenbat = (m) => ks.filter(k => mota(k) === m).length;
@@ -1867,19 +1920,20 @@ function bilakaeraOrria() {
   const azpi = motak.length > 1 ? `<div class="chips bil-katak bil-motak" role="group">${motak.map(x => `<button type="button" class="chip" data-bilmota="${x}" aria-pressed="${x === m}">${T.mota[x] || x}</button>`).join("")}</div>` : "";
   const chips = `<div class="chips bil-katak" role="group" aria-label="${T.hauteskundeMotak}">${katak.map(t => `<button type="button" class="chip" data-bilkat="${t}" aria-pressed="${t === kat}">${T.kat[t] || t}</button>`).join("")}</div>`;
   // familias del gráfico: las que llegan al 4 % alguna vez, por su máximo
-  const max = {}; for (const k of ks) for (const [f, p] of d.h[k][3]) max[f] = Math.max(max[f] || 0, p);
+  const max = {}; for (const k of ks) for (const [f, p] of H[k][3]) max[f] = Math.max(max[f] || 0, p);
   const lerroak = Object.keys(max).filter(f => max[f] >= BIL_GUTXIENEZ).sort((a, b) => max[b] - max[a]).slice(0, BIL_LERRO_MAX)
-    .sort((a, b) => (bilPct(d.h[ks[ks.length - 1]], b) ?? -1) - (bilPct(d.h[ks[ks.length - 1]], a) ?? -1));  // leyenda: por el último resultado
+    .sort((a, b) => (bilPct(H[ks[ks.length - 1]], b) ?? -1) - (bilPct(H[ks[ks.length - 1]], a) ?? -1));  // leyenda: por el último resultado
   const azkena = ks[ks.length - 1], aurrekoa = ks[ks.length - 2];
-  const legenda = lerroak.map(f => { const v = bilPct(d.h[azkena], f), a = aurrekoa ? bilPct(d.h[aurrekoa], f) : null;
+  const legenda = lerroak.map(f => { const v = bilPct(H[azkena], f), a = aurrekoa ? bilPct(H[aurrekoa], f) : null;
     return `<div class="bil-leg"><i class="sq" style="background:${FAM[f] || FAM.LOCAL}"></i><span class="nm">${bilIzena(f, kat)}</span><span class="num">${pct(v)}</span>${a != null && v != null ? dfmt(v - a) : "<span></span>"}</div>`; }).join("");
   const udal = kat === "udal";
   const taula = `<div class="bil-taula${udal ? " udal" : ""}"><span class="h">${T.hauteskundea}</span><span class="h">${T.irabazlea}</span><span class="h num">${T.partaidetza}</span>${udal ? `<span class="h num">${T.zinegotziakLabur}</span>` : ""}` +
-    ks.slice().reverse().map(k => { const [part, , esc_, c] = d.h[k], g = c[0];
+    ks.slice().reverse().map(k => { const [part, , esc_, c] = H[k], g = c[0];
       const ez = udal && g && g[2] != null && esc_ ? `${g[2]} / ${esc_}` : "–";
       return `<span class="nm">${izena(k)}</span><span class="nm"><i class="sq" style="background:${g ? FAM[g[0]] || FAM.LOCAL : "transparent"}"></i> ${g ? bilIzena(g[0], kat) : "–"}${g ? ` <small>${pct(g[1])}</small>` : ""}</span><span class="num">${pct(part)}</span>${udal ? `<span class="num">${ez}</span>` : ""}`; }).join("") + "</div>";
-  return buru + chips + azpi + `<div class="lbl">${T.bozkenEhunekoa} · ${ks.length} ${T.hauteskundeN}</div>${bilGrafikoa(ks, d.h, lerroak, kat)}` +
-    `<div class="lbl">${izena(azkena)}${aurrekoa ? ` · Δ ${izena(aurrekoa)}` : ""}</div>${legenda}<div class="lbl">${T.hauteskundez}</div>${taula}`;
+  return buru + chips + azpi + `<div class="lbl">${T.bozkenEhunekoa} · ${ks.length} ${T.hauteskundeN}</div>${bilGrafikoa(ks, H, lerroak, kat)}` +
+    `<div class="lbl">${izena(azkena)}${aurrekoa ? ` · Δ ${izena(aurrekoa)}` : ""}</div>${legenda}<div class="lbl">${T.hauteskundez}</div>${taula}` +
+    (["territorio", "eh"].includes(b.maila) ? `<p class="hint">${T.bilCera}</p>` : "");
 }
 // Cambio de tipo dentro de la ficha (delegado: el panel se repinta entero)
 $("#body").addEventListener("click", (e) => {
