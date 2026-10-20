@@ -458,6 +458,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 .bil-taula .h { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
 .bil-taula .nm { min-width: 0; overflow-wrap: anywhere; }
 .bil-taula small { color: var(--muted); font-family: var(--f-mono); }
+.bil-taula .bil-est { display: block; font-size: 10px; }  /* «solo Hegoalde»: debajo, para no ensanchar la columna */
 .bil-taula.udal { grid-template-columns: auto 1fr auto auto; }
 .bil-motak .chip { border-style: dashed; }
 .bil-motak .chip[aria-pressed="true"] { border-style: solid; }
