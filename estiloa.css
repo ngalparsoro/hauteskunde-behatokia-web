@@ -21,13 +21,121 @@
   src: url(fonts/saira-semi-condensed-600-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 @font-face { font-family: 'Saira Semi Condensed'; font-style: normal; font-weight: 600; font-display: swap;
   src: url(fonts/saira-semi-condensed-600-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-/* Sala de situación · diseño único (oscuro, deliberado): pizarra muy oscura, ámbar solo para lo activo,
-   letra condensada técnica y cifras en monoespaciada. Todo pintado explícitamente. */
+/* Capa de tokens · «Sala de situación» en oscuro y en claro.
+   ─────────────────────────────────────────────────────────────────────────────
+   ESTE FICHERO SE COMPARTE entre hautesbehatokia (Hauteskunde Behatokia) y
+   nazioenbehatokia (Observatorio de las Naciones): son dos sitios distintos con la
+   misma línea de diseño, así que tiene que ser IDÉNTICO byte a byte en los dos
+   repos. `python scripts/egiaztatu.py` avisa si se separan. No pongas aquí rutas
+   propias de un proyecto.
+
+   Oscuro es la base (:root), así que un navegador sin preferencia declarada ve
+   la pizarra de siempre. El claro entra de dos formas:
+     · prefers-color-scheme: light  → automático, salvo que haya elección guardada
+     · [data-theme="light"]         → elección explícita (tema.js, localStorage)
+   El claro no es «el oscuro invertido»: es papel de plano técnico, misma familia
+   azul-pizarra, y el ámbar se oscurece porque sobre blanco no contrasta.         */
+
 :root {
+  color-scheme: dark;
+  /* fondos */
   --bg: #0C131A; --bg-2: #131D26; --panel: rgba(14,22,30,.93); --panel-solid: #101A22;
-  --line: #2E4252; --line-2: #22323F; --ink: #D6E1E8; --ink-hi: #F4F7F9; --muted: #9FB3C2; --dim: #6A8090;
-  --gold: #F2B544; --gold-2: #F6C866; --gold-bg: #1D1B12; --gold-line: #5A4A1C; --up: #8CC63F; --down: #E0704F;
+  --top-1: #131D26; --top-2: #0E161E;
+  /* Superficies que FLOTAN sobre el mapa (cabecera, línea de tiempo, rueda de elecciones),
+     separadas de --panel: el panel de resultados lleva cifras densas y se queda opaco.
+     En oscuro van macizas, como hasta ahora; en claro translúcidas con desenfoque, que es
+     lo que las quita de encima del mapa sin perder legibilidad. */
+  --chrome: var(--panel); --chrome-blur: none; --dial-fill: var(--panel-solid);
+  /* Halo de los rótulos de la INTERFAZ que se apoyan en el mapa (los del raíl). Va aparte de
+     --halo, que sigue la paleta del MAPA porque es para los topónimos: con satélite encendido
+     --halo es oscuro, y en tema claro dejaba texto oscuro con halo oscuro sobre la imagen. */
+  --halo-ui: rgba(0,0,0,.92); --halo-ui-2: rgba(0,0,0,.65);
+  /* líneas */
+  --line: #2E4252; --line-2: #22323F; --line-ui: #576B7A;
+  /* texto */
+  --ink: #D6E1E8; --ink-hi: #F4F7F9; --muted: #9FB3C2; --dim: #6A8090;
+  /* acento: ámbar solo para lo activo */
+  --gold: #F2B544; --gold-2: #F6C866; --gold-bg: #1D1B12; --gold-line: #5A4A1C;
+  --gold-panel: rgba(28,24,12,.92);
+  /* señal */
+  --up: #8CC63F; --down: #E0704F;
+  /* medidores y retícula */
   --seg-off: #1E2B36; --grid: rgba(120,150,170,.07);
+  /* sombras y halos */
+  --sh-soft: rgba(0,0,0,.5); --sh-strong: rgba(0,0,0,.7);
+  --halo: rgba(0,0,0,.9); --halo-2: rgba(0,0,0,.55);
+  /* rótulos sobre el mapa */
+  --map-ink: #E9F0F4; --map-ink-2: #D6E1E8; --map-gold: #F2B544;
+  /* menú radial, créditos y trama de «sin datos» */
+  --dial-hover: #18252F; --dial-on: #1A2833; --attrib-bg: rgba(12,19,26,.85);
+  --marra: rgba(214,225,232,.6);
+  /* sobre rellenos de partido: igual en los dos temas, no se apoya en la página */
+  --on-fill: #fff; --halo-fill: rgba(0,0,0,.7); --on-seg: #0C131A;
+}
+
+/* Claro automático: solo si no hay elección guardada (tema.js pone data-theme). */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { color-scheme: light;
+    --bg: #E8EDF1; --bg-2: #F4F7F9; --panel: rgba(255,255,255,.94); --panel-solid: #FFFFFF;
+    --top-1: rgba(255,255,255,.58); --top-2: rgba(237,241,244,.70);
+    --chrome: rgba(255,255,255,.68); --chrome-blur: saturate(135%) blur(14px);
+    --dial-fill: rgba(255,255,255,.72);
+    --halo-ui: rgba(255,255,255,.95); --halo-ui-2: rgba(255,255,255,.8);
+    --line: #A3B6C5; --line-2: #C6D4DD; --line-ui: #778A99;
+    --ink: #16222C; --ink-hi: #060D13; --muted: #415767; --dim: #556B7B;
+    --gold: #A97608; --gold-2: #6F4A00; --gold-bg: #FBF1DC; --gold-line: #D4AC5E;
+    --gold-panel: rgba(252,243,223,.95);
+    --up: #3A740C; --down: #A83A1A;
+    --seg-off: #D3DEE6; --grid: rgba(40,70,95,.09);
+    --sh-soft: rgba(22,42,60,.12); --sh-strong: rgba(22,42,60,.20);
+    --halo: rgba(255,255,255,.95); --halo-2: rgba(255,255,255,.75);
+    --map-ink: #0E1C26; --map-ink-2: #2B3E4C; --map-gold: #7A5200;
+    --dial-hover: rgba(216,226,233,.82); --dial-on: rgba(199,214,224,.88); --attrib-bg: rgba(255,255,255,.88);
+    --marra: rgba(30,50,66,.55); --on-fill: #fff; --halo-fill: rgba(0,0,0,.7); --on-seg: #0C131A;
+  }
+}
+
+/* Claro explícito: lo mismo, pero gana a la preferencia del sistema. */
+:root[data-theme="light"] { color-scheme: light;
+  --bg: #E8EDF1; --bg-2: #F4F7F9; --panel: rgba(255,255,255,.94); --panel-solid: #FFFFFF;
+  --top-1: rgba(255,255,255,.58); --top-2: rgba(237,241,244,.70);
+  --chrome: rgba(255,255,255,.68); --chrome-blur: saturate(135%) blur(14px);
+  --dial-fill: rgba(255,255,255,.72);
+  --halo-ui: rgba(255,255,255,.95); --halo-ui-2: rgba(255,255,255,.8);
+  --line: #A3B6C5; --line-2: #C6D4DD; --line-ui: #778A99;
+  --ink: #16222C; --ink-hi: #060D13; --muted: #415767; --dim: #556B7B;
+  --gold: #A97608; --gold-2: #6F4A00; --gold-bg: #FBF1DC; --gold-line: #D4AC5E;
+  --gold-panel: rgba(252,243,223,.95);
+  --up: #3A740C; --down: #A83A1A;
+  --seg-off: #D3DEE6; --grid: rgba(40,70,95,.09);
+  --sh-soft: rgba(22,42,60,.12); --sh-strong: rgba(22,42,60,.20);
+  --halo: rgba(255,255,255,.95); --halo-2: rgba(255,255,255,.75);
+  --map-ink: #0E1C26; --map-ink-2: #2B3E4C; --map-gold: #7A5200;
+  --dial-hover: rgba(216,226,233,.82); --dial-on: rgba(199,214,224,.88); --attrib-bg: rgba(255,255,255,.88);
+  --marra: rgba(30,50,66,.55); --on-fill: #fff; --halo-fill: rgba(0,0,0,.7); --on-seg: #0C131A;
+}
+
+/* ── Rótulos y halos sobre el mapa ──────────────────────────────────────────────
+   No los manda el tema de la interfaz sino el fondo del mapa: con satélite encendido
+   (imagen de tono medio) hacen falta rótulos claros con halo oscuro aunque la interfaz
+   esté en claro. paletaEzarri() escribe <html data-mapa>, y tema.js lo pone ya en «ilun» antes del primer pintado, porque el satélite arranca
+   encendido. Sin data-mapa valen los valores del tema, definidos arriba. */
+:root[data-mapa="ilun"] {
+  --map-ink: #E9F0F4; --map-ink-2: #D6E1E8; --map-gold: #F2B544;
+  --halo: rgba(0,0,0,.9); --halo-2: rgba(0,0,0,.55);
+  --marra: rgba(214,225,232,.6);
+}
+:root[data-mapa="argi"] {
+  --map-ink: #0E1C26; --map-ink-2: #2B3E4C; --map-gold: #7A5200;
+  --halo: rgba(255,255,255,.95); --halo-2: rgba(255,255,255,.75);
+  --marra: rgba(30,50,66,.55);
+}
+/* Sala de situación · disposición y componentes. Los COLORES no están aquí: viven en
+   src/tema.css (oscuro y claro), que se concatena antes de este fichero. Si necesitas un
+   color nuevo, añade el token allí en las dos paletas, no un literal aquí.
+   Únicos literales admitidos: el texto y su halo sobre los rellenos de partido (`--on-fill`),
+   que no dependen del tema porque no se apoyan en la página sino en un color saturado. */
+:root {
   --f-display: "Saira Semi Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-body: "Saira Semi Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
@@ -38,21 +146,22 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 #app { position: relative; height: 100vh; min-height: 600px; overflow: hidden; background: var(--bg); }
 #map { position: absolute; inset: 64px 0 0 0; background-color: var(--bg);
   background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px),
-    radial-gradient(ellipse at 60% 45%, #16222C 0%, #0C131A 70%);
+    radial-gradient(ellipse at 60% 45%, var(--bg-2) 0%, var(--bg) 70%);
   background-size: 48px 48px, 48px 48px, 100% 100%; }
 .maplibregl-map { font-family: var(--f-body); background: transparent; }
-#tip { background: var(--panel-solid); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 12px 40px rgba(0,0,0,.5); border-radius: 0; padding: 8px 10px; font-size: 13px; }
+#tip { background: var(--panel-solid); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 12px 40px var(--sh-soft); border-radius: 0; padding: 8px 10px; font-size: 13px; }
 #tip::after { border-top-color: var(--line); }
 #tip .tt-name { font-family: var(--f-display); font-weight: 600; font-size: 16px; line-height: 1.1; letter-spacing: .03em; text-transform: uppercase; color: var(--ink-hi); }
 #tip .tt-row { display: flex; gap: 12px; justify-content: space-between; font-variant-numeric: tabular-nums; }
 #tip .tt-muted { color: var(--muted); font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; text-transform: uppercase; margin: 2px 0 4px; }
-.maplibregl-ctrl-group button { background: var(--panel-solid); color: var(--ink); border-color: var(--line); border-radius: 0 !important; }
-.maplibregl-ctrl-group { border: 1px solid var(--line); border-radius: 0; }
-.maplibregl-ctrl-attrib { background: rgba(12,19,26,.85); color: var(--dim); font-size: 10px; font-family: var(--f-mono); }
+.maplibregl-ctrl-group button { background: var(--panel-solid); color: var(--ink); border-color: var(--line-ui); border-radius: 0 !important; }
+.maplibregl-ctrl-group { border: 1px solid var(--line-ui); border-radius: 0; }
+.maplibregl-ctrl-attrib { background: var(--attrib-bg); color: var(--dim); font-size: 10px; font-family: var(--f-mono); }
 .maplibregl-ctrl-attrib a { color: var(--muted); }
 
 /* Barra superior */
-#top { position: absolute; left: 0; top: 0; right: 0; height: 64px; z-index: 1100; display: flex; align-items: center; gap: 20px; padding: 0 20px 0 24px; background: linear-gradient(#131D26, #0E161E); border-bottom: 1px solid var(--line-2); }
+#top { position: absolute; left: 0; top: 0; right: 0; height: 64px; z-index: 1100; display: flex; align-items: center; gap: 20px; padding: 0 20px 0 24px; background: linear-gradient(var(--top-1), var(--top-2));
+  -webkit-backdrop-filter: var(--chrome-blur); backdrop-filter: var(--chrome-blur); border-bottom: 1px solid var(--line-2); }
 #top h1 { font-family: var(--f-display); font-weight: 600; font-size: 18px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin: 0; white-space: nowrap; }
 #crumb { display: flex; gap: 8px; align-items: center; font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; min-width: 0; overflow: hidden; white-space: nowrap; }
 #crumb .sep { color: var(--line); }
@@ -61,11 +170,11 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 #crumb button:hover { color: var(--ink); }
 .right { margin-left: auto; display: flex; gap: 10px; align-items: center; }
 .chips { display: flex; gap: 4px; }
-.chip { padding: 6px 10px; border: 1px solid var(--line); color: var(--muted); font-family: var(--f-mono); font-size: 12px; background: transparent; cursor: pointer; }
+.chip { padding: 6px 10px; border: 1px solid var(--line-ui); color: var(--muted); font-family: var(--f-mono); font-size: 12px; background: transparent; cursor: pointer; }
 .chip[aria-pressed="true"] { border-color: var(--gold); color: var(--gold-2); background: var(--gold-bg); }
 .chip:focus-visible, .mode:focus-visible, .sel:focus-visible, .ibtn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
-.sel { background: var(--bg-2); color: var(--ink); border: 1px solid var(--line); font: 500 12px var(--f-mono); padding: 7px 8px; letter-spacing: .02em; max-width: 240px; }
-.ibtn { background: transparent; color: var(--muted); border: 1px solid var(--line); font: 500 11px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; padding: 7px 10px; cursor: pointer; }
+.sel { background: var(--bg-2); color: var(--ink); border: 1px solid var(--line-ui); font: 500 12px var(--f-mono); padding: 7px 8px; letter-spacing: .02em; max-width: 240px; }
+.ibtn { background: transparent; color: var(--muted); border: 1px solid var(--line-ui); font: 500 11px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; padding: 7px 10px; cursor: pointer; }
 .ibtn[aria-pressed="true"] { color: var(--gold-2); border-color: var(--gold); background: var(--gold-bg); }
 
 /* Raíl izquierdo */
@@ -79,7 +188,8 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 }
 .lbl { font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin: 10px 0 6px; }
 .lbl:first-child { margin-top: 0; }
-.mode { display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 12px; border: 1px solid var(--line-2); background: var(--panel); color: var(--muted); font-family: var(--f-mono); font-size: 12px; letter-spacing: .04em; cursor: pointer; text-align: left; width: 100%; }
+.mode { display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 12px; border: 1px solid var(--line-2); background: var(--chrome);
+  -webkit-backdrop-filter: var(--chrome-blur); backdrop-filter: var(--chrome-blur); color: var(--muted); font-family: var(--f-mono); font-size: 12px; letter-spacing: .04em; cursor: pointer; text-align: left; width: 100%; }
 .mode .sw { width: 10px; height: 10px; border: 1px solid var(--muted); flex: none; }
 .mode kbd, .kbd kbd { font: 500 10px var(--f-mono); color: var(--dim); border: 1px solid var(--line); border-bottom-width: 2px; padding: 1px 5px; background: transparent; }
 .mode kbd { margin-left: auto; }
@@ -87,13 +197,20 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 .mode[aria-pressed="true"] { border-color: var(--gold); color: var(--gold-2); background: var(--gold-bg); }
 .mode[aria-pressed="true"] .sw { background: var(--gold); border-color: var(--gold); }
 #rail .sel, #rail input { width: 100%; }
-#q { background: var(--bg-2); color: var(--ink); border: 1px solid var(--line); font: 400 14px var(--f-body); padding: 7px 10px; }
+/* El desplegable de «Eremua» va como una opción más de «Mapa modua»: misma superficie
+   flotante y la misma letra y color, para que el raíl se lea como una sola columna. */
+#rail .sel { background: var(--chrome); color: var(--muted); border-color: var(--line-2);
+  font: 400 12px var(--f-mono); letter-spacing: .04em;
+  -webkit-backdrop-filter: var(--chrome-blur); backdrop-filter: var(--chrome-blur); }
+#q { background: var(--chrome); color: var(--ink); border: 1px solid var(--line-ui); font: 400 14px var(--f-body); padding: 7px 10px;
+  -webkit-backdrop-filter: var(--chrome-blur); backdrop-filter: var(--chrome-blur);
+}
 #q:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
 #q::placeholder { color: var(--dim); }
 
 /* Panel HUD */
 /* altura fija desde el principio: si crece con el contenido al llegar los datos, sube el borde de arriba (CLS) */
-#hud { position: absolute; right: 24px; bottom: 20px; width: 400px; height: calc(100vh - 120px); max-height: calc(100vh - 120px); z-index: 1000; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.5); display: flex; flex-direction: column; }
+#hud { position: absolute; right: 24px; bottom: 20px; width: 400px; height: calc(100vh - 120px); max-height: calc(100vh - 120px); z-index: 1000; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 20px 60px var(--sh-soft); display: flex; flex-direction: column; }
 /* esquinas de instrumental */
 #hud::before, #hud::after { content: ""; position: absolute; width: 16px; height: 16px; border: 2px solid var(--gold); pointer-events: none; }
 #hud::before { left: -2px; top: -2px; border-right: 0; border-bottom: 0; }
@@ -143,7 +260,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
   #map { inset: 56px 0 0 0; }
   .right { gap: 6px; } #years .sel { max-width: 150px; font-size: 11px; } #basemap { display: none; }
   #rail { top: 64px; left: 8px; width: min(260px, calc(100% - 16px)); max-height: calc(100% - 72px); overflow: auto;
-          padding: 10px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.6);
+          padding: 10px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 20px 60px var(--sh-strong);
           display: none; z-index: 1150; }
   #rail.open { display: flex; }
   #hud { max-height: 38%; }
@@ -168,16 +285,16 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 #dial .kat, #dial .it, #dial .hub { pointer-events: auto; }
 #dial .hit { pointer-events: none; }
 #dial svg.abierto .hit { pointer-events: auto; }
-#dial .kat path, #dial .it path { fill: var(--panel-solid); stroke: var(--line); stroke-width: 1; cursor: pointer; }
+#dial .kat path, #dial .it path { fill: var(--dial-fill); stroke: var(--line); stroke-width: 1; cursor: pointer; }
 #dial .kat text { font: 500 11.5px var(--f-mono); letter-spacing: .04em; fill: var(--muted); pointer-events: none; text-anchor: middle; dominant-baseline: middle; }
 #dial .kat .n { font-size: 9px; fill: var(--dim); letter-spacing: .1em; }
-#dial .kat:hover path, #dial .kat.on path { fill: #18252F; stroke: var(--muted); }
+#dial .kat:hover path, #dial .kat.on path { fill: var(--dial-hover); stroke: var(--muted); }
 #dial .kat:hover text { fill: var(--ink); }
 #dial .kat.act path { fill: var(--gold-bg); stroke: var(--gold); }
 #dial .kat.act text { fill: var(--gold-2); }
 #dial .it text { font: 500 10.5px var(--f-mono); fill: var(--ink); pointer-events: none; text-anchor: middle; dominant-baseline: middle; }
 #dial .it .zb { stroke: none; pointer-events: none; }
-#dial .it:hover path.seg, #dial .it:focus path.seg { fill: #1A2833; stroke: var(--gold-2); }
+#dial .it:hover path.seg, #dial .it:focus path.seg { fill: var(--dial-on); stroke: var(--gold-2); }
 #dial .it.act path.seg { fill: var(--gold-bg); stroke: var(--gold); }
 #dial .it.act text { fill: var(--gold-2); }
 #dial .ring { opacity: 0; transform-origin: 250px 250px; transform: scale(.9); pointer-events: none; }
@@ -194,23 +311,23 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 @media (max-width: 700px) { #dial { bottom: calc(38% - 4px); transform: translateX(-50%) scale(.66); } }
 /* Etiquetas propias del mapa, solo en euskera (sustituyen a la capa de nombres de Esri) */
 #izenak { position: absolute; inset: 0; pointer-events: none; z-index: 2; overflow: hidden; }
-#izenak span { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; color: #E9F0F4;
-  font: 400 11.5px var(--f-body); letter-spacing: .03em; text-shadow: 0 0 2px rgba(0,0,0,.9), 0 0 6px rgba(0,0,0,.55); }
+#izenak span { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; color: var(--map-ink);
+  font: 400 11.5px var(--f-body); letter-spacing: .03em; text-shadow: 0 0 2px var(--halo), 0 0 6px var(--halo-2); }
 #izenak span.hiri { font-size: 12.5px; font-weight: 500; }
-#izenak span.eh { font: 500 16px var(--f-display); letter-spacing: .42em; text-transform: uppercase; color: var(--gold); }
-#izenak span.lur { font: 400 10.5px var(--f-mono); letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
-#izenak span.esk { font: 400 9.5px var(--f-mono); letter-spacing: .16em; text-transform: uppercase; color: #D6E1E8; }
+#izenak span.eh { font: 500 16px var(--f-display); letter-spacing: .42em; text-transform: uppercase; color: var(--map-gold); }
+#izenak span.lur { font: 400 10.5px var(--f-mono); letter-spacing: .3em; text-transform: uppercase; color: var(--map-gold); }
+#izenak span.esk { font: 400 9.5px var(--f-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--map-ink-2); }
 .maplibregl-canvas { outline: none; }
 
 /* ---- Sala de situación: atajos de teclado, minimapa, avisos y ayuda ---- */
 .kbd { display: flex; gap: 5px; align-items: center; }
 .kbd kbd { color: var(--muted); }
 #toast { position: absolute; left: 284px; top: 82px; z-index: 1100; font: 500 11px var(--f-mono); letter-spacing: .12em; text-transform: uppercase;
-  color: var(--gold); border: 1px solid var(--gold-line); background: rgba(28,24,12,.92); padding: 6px 10px; pointer-events: none; }
+  color: var(--gold); border: 1px solid var(--gold-line); background: var(--gold-panel); padding: 6px 10px; pointer-events: none; }
 @media (prefers-reduced-motion: no-preference) { #toast:not([hidden]) { animation: agertu .18s ease-out; } }
 @keyframes agertu { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 #laguntza { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1300; width: min(440px, calc(100% - 32px));
-  background: var(--panel-solid); border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.6); padding: 20px 22px; }
+  background: var(--panel-solid); border: 1px solid var(--line); box-shadow: 0 30px 80px var(--sh-strong); padding: 20px 22px; }
 #laguntza::before, #laguntza::after { content: ""; position: absolute; width: 16px; height: 16px; border: 2px solid var(--gold); }
 #laguntza::before { left: -2px; top: -2px; border-right: 0; border-bottom: 0; }
 #laguntza::after { right: -2px; bottom: -2px; border-left: 0; border-top: 0; }
@@ -220,14 +337,18 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 #laguntza dt kbd { font: 500 11px var(--f-mono); color: var(--gold); border: 1px solid var(--gold-line); border-bottom-width: 2px; padding: 1px 6px; }
 #laguntza dd { margin: 0; color: var(--ink); }
 #laguntza .close { position: absolute; right: 12px; top: 10px; }
-#rail .lbl { text-shadow: 0 0 3px #000, 0 0 8px rgba(0,0,0,.8); color: var(--muted); }
+/* Rótulos del raíl (Mapa modua, Bilatu, Eremua): sin halo, al aire, con el color de los
+   topónimos del mapa (--map-ink), que sigue la paleta del MAPA y no la de la interfaz: claros
+   sobre el satélite en los dos temas, oscuros sobre el papel al apagarlo. Peso 500, que es el
+   máximo real de IBM Plex Mono (no hay 700 cargado: pedirlo da una negrita falsa). */
+#rail .lbl { text-shadow: none; color: var(--map-ink); font-weight: 500; }
 @media (max-width: 900px) { .kbd, .mode kbd { display: none; } #toast { left: 12px; top: 70px; } .maplibregl-ctrl-top-left { display: none; } }
 
 
 /* ---- Página «Iturriak» ---- */
 .orria { min-height: 100%; background: var(--bg); color: var(--ink); }
 .orri-goiburua { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
-  padding: 14px 24px; background: linear-gradient(#131D26, #0E161E); border-bottom: 1px solid var(--line-2); }
+  padding: 14px 24px; background: linear-gradient(var(--top-1), var(--top-2)); border-bottom: 1px solid var(--line-2); }
 .orri-goiburua .logoa { font: 600 18px var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
 .orri-edukia { max-width: 1120px; margin: 0 auto; padding: 32px 24px 64px; display: grid; gap: 44px; }
 .orri-edukia > * { min-width: 0; }  /* las tablas anchas hacen scroll dentro de su caja, no en la página */
@@ -260,7 +381,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 @media (max-width: 700px) { .orri-goiburua { padding: 10px 14px; gap: 10px; } .orri-edukia { padding: 22px 16px 48px; } }
 
 /* Eremuak daturik gabe: marraduna mapan eta legendan, eta zergatia argibidean */
-.sq.marra { background: repeating-linear-gradient(135deg, rgba(214,225,232,.6) 0 1.5px, var(--bg-2) 1.5px 4px); border: 1px solid var(--line); }
+.sq.marra { background: repeating-linear-gradient(135deg, var(--marra) 0 1.5px, var(--bg-2) 1.5px 4px); border: 1px solid var(--line); }
 #tip .tt-huts { max-width: 260px; margin-top: 4px; color: var(--ink); font-size: 12.5px; line-height: 1.35; white-space: normal; }
 .lotura { background: none; border: 0; padding: 0; font: inherit; color: var(--gold-2); text-decoration: underline; cursor: pointer; }
 
@@ -288,8 +409,8 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 .barr .bn { font-size: 12.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .barr .bn b { color: var(--ink); font: 500 11.5px var(--f-mono); margin-left: 4px; }
 .barr .bc { display: flex; gap: 1px; height: 16px; }
-.barr .bc i { display: flex; align-items: center; justify-content: center; font: 500 9.5px var(--f-mono); font-style: normal; color: #fff;
-  text-shadow: 0 0 2px rgba(0,0,0,.7); min-width: 2px; overflow: hidden; }
+.barr .bc i { display: flex; align-items: center; justify-content: center; font: 500 9.5px var(--f-mono); font-style: normal; color: var(--on-fill);
+  text-shadow: 0 0 2px var(--halo-fill); min-width: 2px; overflow: hidden; }
 
 /* ---- Euskal Parlamentu Federala: juego de la coalición (dentro del panel, pestaña Eserlekuak) ---- */
 .fed-neurgailua { position: relative; height: 14px; background: var(--seg-off); margin: 12px 0 6px; }
@@ -316,7 +437,8 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 /* ---- Denbora-lerroa: arriba en el centro del mapa ---- */
 /* entre el raíl (hasta 284 px) y el panel (desde la derecha 440 px) */
 #denboralerroa { position: absolute; top: 78px; left: 296px; right: 452px; max-width: 760px; margin: 0 auto;
-  z-index: 1040; display: flex; align-items: center; gap: 12px; padding: 8px 12px; background: var(--panel); border: 1px solid var(--line); }
+  z-index: 1040; display: flex; align-items: center; gap: 12px; padding: 8px 12px; background: var(--chrome);
+  -webkit-backdrop-filter: var(--chrome-blur); backdrop-filter: var(--chrome-blur); border: 1px solid var(--line); }
 #denboralerroa::before { content: ""; position: absolute; left: -2px; top: -2px; width: 12px; height: 12px; border: 2px solid var(--gold); border-right: 0; border-bottom: 0; }
 #dlplay { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gold); background: var(--gold-bg); color: var(--gold); cursor: pointer; font-size: 12px; }
 #dlplay:focus-visible, .dl-puntua:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
@@ -332,7 +454,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
    del IGN; BD ORTHO, Licence Ouverte: la fuente): solo cuando se ven (desde el zoom 10, con el satélite; 06-menu-erradiala.js),
    en la franja libre bajo la línea de tiempo. Los créditos completos, en ⓘ. */
 #ortokreditua { position: absolute; bottom: 4px; left: 420px; right: 452px; z-index: 900; text-align: center;
-  font: 400 10px/12px var(--f-mono); color: var(--ink); letter-spacing: .02em; text-shadow: 0 0 3px #000, 0 0 6px rgba(0,0,0,.9);
+  font: 400 10px/12px var(--f-mono); color: var(--ink); letter-spacing: .02em; text-shadow: 0 0 3px var(--halo), 0 0 6px var(--halo-2);
   pointer-events: none; white-space: nowrap; }
 #ortokreditua a { color: inherit; pointer-events: auto; }
 #ortokreditua[hidden] { display: none; }
@@ -383,7 +505,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 .nabigazioa > summary::-webkit-details-marker { display: none; }
 .nabigazioa[open] > summary { color: var(--gold); border-color: var(--gold); background: var(--gold-bg); }
 .nab-menua { position: absolute; left: 0; top: calc(100% + 8px); z-index: 1300; min-width: 210px; display: flex; flex-direction: column;
-  background: var(--panel-solid); border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.5); padding: 6px; }
+  background: var(--panel-solid); border: 1px solid var(--line); box-shadow: 0 20px 60px var(--sh-soft); padding: 6px; }
 .nab-menua a { font: 500 12px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 10px 12px; border-left: 2px solid transparent; }
 .nab-menua a:hover, .nab-menua a:focus-visible { color: var(--ink-hi); background: var(--bg-2); outline: none; }
 .nab-menua a[aria-current="page"] { color: var(--gold); border-left-color: var(--gold); }
@@ -429,7 +551,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 .hizkuntzak > summary::after { content: "▾"; margin-left: 5px; color: var(--dim); }
 .hizkuntzak[open] > summary { border-color: var(--gold-line); color: var(--gold-2); }
 .hizk-menua { position: absolute; right: 0; top: calc(100% + 6px); z-index: 1300; min-width: 150px; display: grid; background: var(--panel-solid);
-  border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(0,0,0,.5); }
+  border: 1px solid var(--line); box-shadow: 0 12px 30px var(--sh-soft); }
 .hizk-menua button, .hizk-menua a { display: flex; gap: 10px; align-items: baseline; padding: 9px 12px; background: transparent; border: 0;
   border-bottom: 1px solid var(--line-2); color: var(--ink); font: 400 13px var(--f-body); text-align: left; text-decoration: none; cursor: pointer; }
 .hizk-menua > :last-child { border-bottom: 0; }
@@ -499,3 +621,10 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 .orri-edukia details.xehetasunak > summary { cursor: pointer; padding: 10px 0; font: 500 11.5px var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold-2); }
 .orri-edukia details.xehetasunak[open] > summary { border-bottom: 1px solid var(--line-2); margin-bottom: 8px; }
 .orri-edukia details.xehetasunak > summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* Botón del tema: icono, no texto. Enseña el tema AL QUE SE VA, que es lo que hace al pulsarlo:
+   sol estando en oscuro, luna estando en claro. aria-pressed="true" = claro activo. */
+.ibtn.ikono { display: inline-flex; align-items: center; justify-content: center; padding: 6px 9px; }
+.ibtn.ikono svg { display: block; }
+#tema .ilargia, #tema[aria-pressed="true"] .eguzkia { display: none; }
+#tema[aria-pressed="true"] .ilargia { display: block; }
