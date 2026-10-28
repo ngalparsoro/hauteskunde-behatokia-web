@@ -592,7 +592,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
   #top .kbd, #laguntzabtn, #years { display: none; }
   #top h1 { max-width: 92px; font-size: 13px; }
   #basemap { display: inline-flex; }
-  #irudia, #basemap { font-size: 0; width: 34px; justify-content: center; padding: 0; }
+  #basemap { font-size: 0; width: 34px; justify-content: center; padding: 0; }
   #irudia::before { content: "⤓"; font-size: 17px; }
   #basemap::before { content: "◐"; font-size: 15px; }
   #hud { top: auto; left: 0; right: 0; bottom: 0; width: 100%; max-height: none; height: var(--orria-h); z-index: 1100;

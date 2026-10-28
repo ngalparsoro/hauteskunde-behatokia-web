@@ -151,7 +151,9 @@ const TESTUAK = {
     tokikoak: "Tokiko zerrendak", gainontzekoak: "Gainontzekoak", daturikEz: "Daturik ez",
     tresnakEzkutatu: "Tresnak ezkutatu", tresnakErakutsi: "Tresnak erakutsi",
     // escaños
-    panelaZabaldu: "Panela zabaldu / tolestu", irudia: "Irudia", irudiaIzenb: "Mapa irudi gisa deskargatu (PNG), partekatzeko", irudiaPrest: "Irudia deskargatuta", irudiaEzin: "Ezin izan da irudia sortu", ufEzin: "Ezin da konparatu: udal botoa ia osorik sailkatu gabeko zerrendetakoa da (alderdirik gabe)", ufForua: "foru-parekoa", bilakaera: "Bilakaera", bilakaeraHautatu: "Hautatu eremu bat mapan 2011tik nola bozkatu duen ikusteko.", bilCera: "Egoiliarren parte-hartzea; ehunekoak atzerriko botoarekin (CERA), iturriak ematen duenean.", bilOsatugabe: "Puntu hutsak: Euskal Herri osoa hartzen ez duten hauteskundeak (zatiren baten daturik ez dago data horretan); ez dira besteekin lotzen.", bilBakarrik: (z) => `${z} bakarrik`, bilakaeraGrafikoa: "Botoen bilakaera", partaidetza: "Parte-hartzea", zinegotziakLabur: "Zineg.", bozkenEhunekoa: "Botoen %", hauteskundez: "Hauteskundez hauteskunde",
+    panelaZabaldu: "Panela zabaldu / tolestu", 
+    laburpenikEz: "Eremu honek ez du daturik hauteskunde honetan", botoak: "Botoak",
+    ufEzin: "Ezin da konparatu: udal botoa ia osorik sailkatu gabeko zerrendetakoa da (alderdirik gabe)", ufForua: "foru-parekoa", bilakaera: "Bilakaera", bilakaeraHautatu: "Hautatu eremu bat mapan 2011tik nola bozkatu duen ikusteko.", bilCera: "Egoiliarren parte-hartzea; ehunekoak atzerriko botoarekin (CERA), iturriak ematen duenean.", bilOsatugabe: "Puntu hutsak: Euskal Herri osoa hartzen ez duten hauteskundeak (zatiren baten daturik ez dago data horretan); ez dira besteekin lotzen.", bilBakarrik: (z) => `${z} bakarrik`, bilakaeraGrafikoa: "Botoen bilakaera", partaidetza: "Parte-hartzea", zinegotziakLabur: "Zineg.", bozkenEhunekoa: "Botoen %", hauteskundez: "Hauteskundez hauteskunde",
     eserlekuak: "Eserlekuak", gehiengoa: "Gehiengo osoa", barrutika: "Barrutika", udala: "udala", herrialdeka: "Herrialdeka",
     zinegotziakEH: "Zinegotziak Euskal Herrian (blokeka)", zinegotziak: "Zinegotziak",
     eserlekurikEzHemen: "Hautatutako eremuak ez du eserlekurik erakunde hauetan (Iparraldean, bigarren itzulian erabakitzen dira).",
@@ -226,7 +228,9 @@ const TESTUAK = {
     kantonamenduAzalpena: "Baiona y Angelu están repartidos entre varios cantones: en el mapa aparecen juntos, con Bokale, y aquí el resultado oficial de cada cantón, sumado mesa a mesa.",
     tokikoak: "Listas locales", gainontzekoak: "Otros", daturikEz: "Sin datos",
     tresnakEzkutatu: "Ocultar herramientas", tresnakErakutsi: "Mostrar herramientas",
-    panelaZabaldu: "Abrir / cerrar el panel", irudia: "Imagen", irudiaIzenb: "Descargar el mapa como imagen (PNG) para compartir", irudiaPrest: "Imagen descargada", irudiaEzin: "No se ha podido crear la imagen", ufEzin: "No comparable: el voto municipal es casi todo de listas sin clasificar (sin partidos)", ufForua: "equivalente foral", bilakaera: "Evolución", bilakaeraHautatu: "Selecciona una zona en el mapa para ver cómo ha votado desde 2011.", bilCera: "Participación de residentes; porcentajes con el voto exterior (CERA) donde la fuente lo da.", bilOsatugabe: "Puntos huecos: elecciones que no cubren toda Euskal Herria (de alguna parte no hay datos de esa fecha); no se unen con las demás.", bilBakarrik: (z) => `solo ${z}`, bilakaeraGrafikoa: "Evolución del voto", partaidetza: "Participación", zinegotziakLabur: "Conc.", bozkenEhunekoa: "% de voto", hauteskundez: "Elección a elección",
+    panelaZabaldu: "Abrir / cerrar el panel", 
+    laburpenikEz: "Esta zona no tiene datos en esta elección", botoak: "Votos",
+    ufEzin: "No comparable: el voto municipal es casi todo de listas sin clasificar (sin partidos)", ufForua: "equivalente foral", bilakaera: "Evolución", bilakaeraHautatu: "Selecciona una zona en el mapa para ver cómo ha votado desde 2011.", bilCera: "Participación de residentes; porcentajes con el voto exterior (CERA) donde la fuente lo da.", bilOsatugabe: "Puntos huecos: elecciones que no cubren toda Euskal Herria (de alguna parte no hay datos de esa fecha); no se unen con las demás.", bilBakarrik: (z) => `solo ${z}`, bilakaeraGrafikoa: "Evolución del voto", partaidetza: "Participación", zinegotziakLabur: "Conc.", bozkenEhunekoa: "% de voto", hauteskundez: "Elección a elección",
     eserlekuak: "Escaños", gehiengoa: "Mayoría absoluta", barrutika: "Por circunscripción", udala: "ayuntamiento", herrialdeka: "Por territorio",
     zinegotziakEH: "Concejales en Euskal Herria (por bloques)", zinegotziak: "Concejales",
     eserlekurikEzHemen: "La zona seleccionada no tiene escaños en estas instituciones (en Iparralde se deciden en segunda vuelta).",
@@ -300,7 +304,9 @@ const TESTUAK = {
     kantonamenduAzalpena: "Bayonne et Anglet sont partagées entre plusieurs cantons : sur la carte elles apparaissent ensemble, avec Boucau, et ici le résultat officiel de chaque canton, additionné bureau par bureau.",
     tokikoak: "Listes locales", gainontzekoak: "Autres", daturikEz: "Pas de données",
     tresnakEzkutatu: "Masquer les outils", tresnakErakutsi: "Afficher les outils",
-    panelaZabaldu: "Ouvrir / fermer le panneau", irudia: "Image", irudiaIzenb: "Télécharger la carte en image (PNG) pour la partager", irudiaPrest: "Image téléchargée", irudiaEzin: "Impossible de créer l'image", ufEzin: "Non comparable : le vote municipal va presque entièrement à des listes non classées (sans partis)", ufForua: "équivalent foral", bilakaera: "Évolution", bilakaeraHautatu: "Sélectionnez une zone sur la carte pour voir comment elle a voté depuis 2011.", bilCera: "Participation des résidents ; pourcentages avec le vote de l'étranger (CERA) quand la source le donne.", bilOsatugabe: "Points creux : élections qui ne couvrent pas tout Euskal Herria (il manque les données d'une partie à cette date) ; ils ne sont pas reliés aux autres.", bilBakarrik: (z) => `${z} seulement`, bilakaeraGrafikoa: "Évolution du vote", partaidetza: "Participation", zinegotziakLabur: "Cons.", bozkenEhunekoa: "% des voix", hauteskundez: "Élection par élection",
+    panelaZabaldu: "Ouvrir / fermer le panneau", 
+    laburpenikEz: "Cette zone n'a pas de données pour cette élection", botoak: "Voix",
+    ufEzin: "Non comparable : le vote municipal va presque entièrement à des listes non classées (sans partis)", ufForua: "équivalent foral", bilakaera: "Évolution", bilakaeraHautatu: "Sélectionnez une zone sur la carte pour voir comment elle a voté depuis 2011.", bilCera: "Participation des résidents ; pourcentages avec le vote de l'étranger (CERA) quand la source le donne.", bilOsatugabe: "Points creux : élections qui ne couvrent pas tout Euskal Herria (il manque les données d'une partie à cette date) ; ils ne sont pas reliés aux autres.", bilBakarrik: (z) => `${z} seulement`, bilakaeraGrafikoa: "Évolution du vote", partaidetza: "Participation", zinegotziakLabur: "Cons.", bozkenEhunekoa: "% des voix", hauteskundez: "Élection par élection",
     eserlekuak: "Sièges", gehiengoa: "Majorité absolue", barrutika: "Par circonscription", udala: "conseil municipal", herrialdeka: "Par province",
     zinegotziakEH: "Conseillers municipaux en Euskal Herria (par blocs)", zinegotziak: "Conseillers municipaux",
     eserlekurikEzHemen: "La zone sélectionnée n'a pas de sièges dans ces institutions (en Iparralde, ils se décident au second tour).",
@@ -374,7 +380,9 @@ const TESTUAK = {
     kantonamenduAzalpena: "Baiona and Angelu are split between several cantons: on the map they appear together, with Bokale, and here is each canton's official result, added up polling station by polling station.",
     tokikoak: "Local lists", gainontzekoak: "Others", daturikEz: "No data",
     tresnakEzkutatu: "Hide tools", tresnakErakutsi: "Show tools",
-    panelaZabaldu: "Open / close the panel", irudia: "Image", irudiaIzenb: "Download the map as an image (PNG) to share", irudiaPrest: "Image downloaded", irudiaEzin: "Could not create the image", ufEzin: "Not comparable: almost all the local vote went to unclassified lists (no parties)", ufForua: "provincial counterpart", bilakaera: "Trend", bilakaeraHautatu: "Select an area on the map to see how it has voted since 2011.", bilCera: "Turnout of residents; percentages include the vote from abroad (CERA) where the source gives it.", bilOsatugabe: "Hollow points: elections that do not cover all of Euskal Herria (data for some part are missing at that date); they are not joined to the rest.", bilBakarrik: (z) => `${z} only`, bilakaeraGrafikoa: "Vote trend", partaidetza: "Turnout", zinegotziakLabur: "Cllrs", bozkenEhunekoa: "Vote %", hauteskundez: "Election by election",
+    panelaZabaldu: "Open / close the panel", 
+    laburpenikEz: "This area has no data in this election", botoak: "Votes",
+    ufEzin: "Not comparable: almost all the local vote went to unclassified lists (no parties)", ufForua: "provincial counterpart", bilakaera: "Trend", bilakaeraHautatu: "Select an area on the map to see how it has voted since 2011.", bilCera: "Turnout of residents; percentages include the vote from abroad (CERA) where the source gives it.", bilOsatugabe: "Hollow points: elections that do not cover all of Euskal Herria (data for some part are missing at that date); they are not joined to the rest.", bilBakarrik: (z) => `${z} only`, bilakaeraGrafikoa: "Vote trend", partaidetza: "Turnout", zinegotziakLabur: "Cllrs", bozkenEhunekoa: "Vote %", hauteskundez: "Election by election",
     eserlekuak: "Seats", gehiengoa: "Absolute majority", barrutika: "By constituency", udala: "council", herrialdeka: "By province",
     zinegotziakEH: "Councillors in Euskal Herria (by bloc)", zinegotziak: "Councillors",
     eserlekurikEzHemen: "The selected area has no seats in these institutions (in Iparralde they are decided in the second round).",
@@ -430,7 +438,7 @@ const dfmt = (d) => d == null ? "" : `<span class="${d > 0 ? "up" : d < 0 ? "dow
 const BASE = (() => { let b = location.href.split(/[?#]/)[0]; if (/\.html?$/i.test(b)) b = b.slice(0, b.lastIndexOf("/") + 1); if (!b.endsWith("/")) b += "/"; return b; })();
 // Huella del contenido de data/ y geo/ (la pone build_map.py). Va en la URL de cada fichero: si los
 // datos cambian, cambia la URL y el navegador no reutiliza la copia vieja de su caché.
-const VERSION = "a414edbafef4";
+const VERSION = "2d3ad0bd5dbb";
 // Los datos se cargan con fetch() desde el propio sitio (Cloudflare Pages o python -m http.server)
 const load = async (u) => {
   const r = await fetch(new URL(`${u}?v=${VERSION}`, BASE).href, { cache: "force-cache" });
@@ -1966,71 +1974,6 @@ function fitxaAldatu(f) {
   arnasa().then(() => { if (state.fitxa === f) margotu(); });  // primero se ve la pestaña marcada; luego su contenido (INP)
 }
 document.querySelectorAll("#hudfitxak [role=tab]").forEach(b => { b.setAttribute("aria-selected", b.dataset.fitxa === state.fitxa); b.addEventListener("click", () => fitxaAldatu(b.dataset.fitxa)); });
-// ---- Irudia: el mapa como imagen PNG para compartir (botón «Irudia» de la barra superior) ----
-// Se copia el lienzo del mapa tal como se ve (sin los paneles) y se le añade: arriba, qué se ve (zona, elección,
-// modo); abajo, la leyenda y, al pie, la web y las fuentes con su licencia (obligatorio para las imágenes de satélite).
-const testua = (html) => { const t = document.createElement("template"); t.innerHTML = html; return t.content.textContent.replace(/\s+/g, " ").trim(); };
-
-// Leyenda de la imagen: en «Irabazlea», los resultados de lo que se ve; en los demás modos, la escala de colores
-function irudiLegenda() {
-  if (state.modua === "winner") {
-    const r = state.hautatua ? erreg(state.hautatua) : erregistroa("eh", estaldura());
-    return r ? r.c.slice(0, 8).map(c => [FAM[c[1] || c[0]] || FAM.LOCAL, `${testua(short(c[0]))}  ${pct(c[3])}`]) : [];
-  }
-  const t = document.createElement("template"); t.innerHTML = legendaModua();
-  return [...t.content.querySelectorAll(".legend .li")].map(li => [li.querySelector("i").style.background, li.textContent.trim()]);
-}
-
-function irudiaMarraztu(mapa) {
-  const css = getComputedStyle(document.documentElement), v = (n) => css.getPropertyValue(n).trim();
-  const dpr = mapa.width / mapa.clientWidth, W = mapa.width, P = 28 * dpr;
-  const leg = irudiLegenda(), zutabeak = Math.max(1, Math.floor((W - 2 * P) / (230 * dpr))), legH = Math.ceil(leg.length / zutabeak) * 26 * dpr;
-  const GOI = 96 * dpr, BEHE = (leg.length ? legH + 30 * dpr : 0) + 64 * dpr;
-  const c = document.createElement("canvas"); c.width = W; c.height = GOI + mapa.height + BEHE;
-  const x = c.getContext("2d");
-  x.fillStyle = v("--bg"); x.fillRect(0, 0, c.width, c.height);
-  x.drawImage(mapa, 0, GOI);
-  x.fillStyle = v("--gold"); x.fillRect(0, GOI - 2 * dpr, W, 2 * dpr);
-  // cabecera: zona o lo seleccionado, elección y modo
-  const h = state.hautatua ? testua(NAME[state.hautatua] || (erreg(state.hautatua) || {}).n || "") : testua(T.zonak[estaldura() === "EH" ? "Euskal Herria" : estaldura()] || estaldura());
-  x.textBaseline = "alphabetic"; x.fillStyle = v("--ink-hi"); x.font = `600 ${30 * dpr}px ${v("--f-display")}`;
-  x.fillText(h.toUpperCase(), P, 44 * dpr);
-  const modua = testua(($(".mode[aria-pressed=true] [data-t]") || {}).textContent || "");  // sin la letra del atajo
-  x.fillStyle = v("--muted"); x.font = `500 ${14 * dpr}px ${v("--f-mono")}`;
-  x.fillText(`${testua(izena(state.hauteskundea))}${osag().izena ? " + " + testua(osag().izena) : ""} · ${modua}`.toUpperCase(), P, 72 * dpr);
-  x.fillStyle = v("--gold"); x.font = `600 ${15 * dpr}px ${v("--f-display")}`; x.textAlign = "right";
-  x.fillText("HAUTESKUNDE BEHATOKIA", W - P, 44 * dpr); x.textAlign = "left";
-  // leyenda en columnas
-  let y = GOI + mapa.height + 30 * dpr;
-  x.font = `500 ${15 * dpr}px ${v("--f-body")}`;
-  leg.forEach(([kol, izen], i) => {
-    const zx = P + (i % zutabeak) * (W - 2 * P) / zutabeak, zy = y + Math.floor(i / zutabeak) * 26 * dpr;
-    x.fillStyle = kol; x.fillRect(zx, zy - 12 * dpr, 14 * dpr, 14 * dpr);
-    x.fillStyle = v("--ink"); x.fillText(izen, zx + 22 * dpr, zy);
-  });
-  // pie: web y fuentes
-  y = c.height - 38 * dpr; x.fillStyle = v("--line"); x.fillRect(P, y - 18 * dpr, W - 2 * P, 1 * dpr);
-  x.fillStyle = v("--muted"); x.font = `400 ${11.5 * dpr}px ${v("--f-mono")}`;
-  x.fillText(`${location.host}${location.pathname.replace(/index\.html$/, "")}`, P, y);
-  x.fillStyle = v("--dim"); x.fillText(testua(ATRIB()), P, y + 18 * dpr, W - 2 * P);
-  return c;
-}
-
-function irudiaDeskargatu() {
-  // el lienzo de WebGL solo se puede leer durante el pintado: se pide uno y se copia en ese momento
-  map.once("render", () => {
-    let c; try { c = irudiaMarraztu(map.getCanvas()); } catch { abisua(T.irudiaEzin); return; }
-    c.toBlob((b) => {
-      if (!b) { abisua(T.irudiaEzin); return; }
-      const a = document.createElement("a"), id = state.hautatua ? "-" + String(state.hautatua).replace(/[^\w-]/g, "_") : "";
-      a.href = URL.createObjectURL(b); a.download = `behatokia-${state.hauteskundea}${id}.png`;
-      document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-      abisua(T.irudiaPrest);
-    }, "image/png");
-  });
-  map.triggerRepaint();
-}
-$("#irudia").addEventListener("click", irudiaDeskargatu);
 // ---- Bilakaera: cómo ha votado una zona desde 2011 (pestaña del panel de la derecha) ----
 // Los datos están en data/bilakaera/ (scripts/web_bilakaera.py): <id>.json cada municipio; maila/<nivel>.json las zonas
 // de un nivel agregado (territorios, comarcas…) y maila/eh.json el total. Todas sus elecciones, con el % (y los escaños)
