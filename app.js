@@ -438,7 +438,7 @@ const dfmt = (d) => d == null ? "" : `<span class="${d > 0 ? "up" : d < 0 ? "dow
 const BASE = (() => { let b = location.href.split(/[?#]/)[0]; if (/\.html?$/i.test(b)) b = b.slice(0, b.lastIndexOf("/") + 1); if (!b.endsWith("/")) b += "/"; return b; })();
 // Huella del contenido de data/ y geo/ (la pone build_map.py). Va en la URL de cada fichero: si los
 // datos cambian, cambia la URL y el navegador no reutiliza la copia vieja de su caché.
-const VERSION = "2d3ad0bd5dbb";
+const VERSION = "782cb9919f0c";
 // Los datos se cargan con fetch() desde el propio sitio (Cloudflare Pages o python -m http.server)
 const load = async (u) => {
   const r = await fetch(new URL(`${u}?v=${VERSION}`, BASE).href, { cache: "force-cache" });
