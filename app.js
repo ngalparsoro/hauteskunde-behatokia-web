@@ -170,6 +170,21 @@ const TESTUAK = {
     fedMetodoa: "Metodoa: herrialde bakoitzean d'Hondt legea, hautagaitzen botoen %3ko langarekin. Hegoaldean alderdika banatzen da eta Iparraldean blokeka; parlamentuan eserlekuak blokeka biltzen dira. Sailkatu gabeko tokiko zerrendak ez dira sartzen. Ez da benetako erakunde bat: ariketa bat da.",
     // línea de tiempo
     dataAukeratu: "Data: zona bakoitzean, data horretarainoko azken hauteskundeak", gaur: "Gaur", erreproduzitu: "Erreproduzitu", gelditu: "Gelditu",
+    // Folioa (08-folioa.js): el resumen de la zona en PDF
+    folio: {
+      botoia: "Laburpena PDFan", fitxategia: "laburpena", izenburua: "Hauteskunde Behatokia", webgunea: "hautesbehatokia.eus",
+      biztanleak: "Biztanleak", sekzioak: "Sekzioak", eskualdea: "Eskualdea", udalerriak: "Udalerriak", ceraZentsua: "Kanpoko zentsua",
+      azkenHauteskundeak: "Azken hauteskundeak", nonDagoAldea: "Non dago aldea", bilakaera2011: "Bilakaera 2011tik",
+      sekziozSekzio: "Sekzioz sekzio", zatika: "Zatika",
+      hartzenEz: "hauteskunde honek ez du zona hau hartzen", puntuGainetik: "puntu bigarrenaren gainetik",
+      zinegotziak: "Zinegotziak", zinegotziakGuzt: "Zinegotziak guztira", hemen: "hemen",
+      azkenaAurrekoa: "Azkena eta aurrekoa", berria: "berria", eta: "eta", sekzio: "sekzio", erdikoa: "erdikoa",
+      mapaIzenak: { sekzio: "Sekzio", udalerri: "Udalerri", eskualdea: "Eskualde", territorio: "Herrialde", eremua: "Eremu" },
+      mailaBat: { eh: "Euskal Herria osoa", eremua: "Eremua", territorio: "Herrialdea", eskualdea: "Eskualdea", muni: "Udalerria" },
+      mapaOina: (x) => `${x} bakoitza, irabazlearen kolorearekin`,
+      etaBeste: (n) => `… eta beste ${n}`,
+      iturriak: "Iturri ofizialak: Barne Ministerioa, Eusko Jaurlaritza, Nafarroako Gobernua, Ministère de l'Intérieur, INE · ikus «Iturriak» webgunean",
+    },
   },
   es: {
     erakundeak: {"Eusko Legebiltzarra": "Parlamento Vasco", "Nafarroako Parlamentua": "Parlamento de Navarra", "Arabako Batzar Nagusiak": "Juntas Generales de Álava", "Bizkaiko Batzar Nagusiak": "Juntas Generales de Bizkaia", "Gipuzkoako Batzar Nagusiak": "Juntas Generales de Gipuzkoa", "Diputatuen Kongresua (Hegoaldea)": "Congreso de los Diputados (Hegoalde)"},
@@ -246,6 +261,20 @@ const TESTUAK = {
     fedGarbitu: "Vaciar", fedTxikienak: "Coaliciones ganadoras mínimas",
     fedMetodoa: "Método: ley d'Hondt en cada territorio, con barrera del 3 % de los votos a candidaturas. En Hegoalde se reparte por partidos y en Iparralde por bloques; en el parlamento los escaños se agrupan por bloques. Las listas locales sin clasificar no entran. No es una institución real: es un ejercicio.",
     dataAukeratu: "Fecha: en cada zona, las últimas elecciones hasta esa fecha", gaur: "Hoy", erreproduzitu: "Reproducir", gelditu: "Parar",
+    folio: {
+      botoia: "El resumen en PDF", fitxategia: "resumen", izenburua: "Hauteskunde Behatokia", webgunea: "hautesbehatokia.eus",
+      biztanleak: "Habitantes", sekzioak: "Secciones", eskualdea: "Comarca", udalerriak: "Municipios", ceraZentsua: "Censo exterior",
+      azkenHauteskundeak: "Últimas elecciones", nonDagoAldea: "En qué se diferencia", bilakaera2011: "Evolución desde 2011",
+      sekziozSekzio: "Sección a sección", zatika: "Por dentro",
+      hartzenEz: "estas elecciones no cubren esta zona", puntuGainetik: "puntos sobre la segunda",
+      zinegotziak: "Concejales", zinegotziakGuzt: "Concejales en total", hemen: "aquí",
+      azkenaAurrekoa: "La última y la anterior", berria: "nueva", eta: "y", sekzio: "secciones", erdikoa: "mediana",
+      mapaIzenak: { sekzio: "Sección", udalerri: "Municipio", eskualdea: "Comarca", territorio: "Territorio", eremua: "Ámbito" },
+      mailaBat: { eh: "Todo Euskal Herria", eremua: "Ámbito", territorio: "Territorio", eskualdea: "Comarca", muni: "Municipio" },
+      mapaOina: (x) => `Cada ${String(x).toLowerCase()}, del color de quien gana`,
+      etaBeste: (n) => `… y ${n} más`,
+      iturriak: "Fuentes oficiales: Ministerio del Interior, Gobierno Vasco, Gobierno de Navarra, Ministère de l'Intérieur, INE · ver «Fuentes» en la web",
+    },
   },
   fr: {
     erakundeak: {"Eusko Legebiltzarra": "Parlement basque", "Nafarroako Parlamentua": "Parlement de Navarre", "Arabako Batzar Nagusiak": "Juntes générales d'Alava", "Bizkaiko Batzar Nagusiak": "Juntes générales de Biscaye", "Gipuzkoako Batzar Nagusiak": "Juntes générales du Guipuscoa", "Diputatuen Kongresua (Hegoaldea)": "Congrès des députés (Hegoalde)"},
@@ -322,6 +351,20 @@ const TESTUAK = {
     fedGarbitu: "Vider", fedTxikienak: "Coalitions gagnantes minimales",
     fedMetodoa: "Méthode : méthode d'Hondt dans chaque province, avec un seuil de 3 % des voix aux candidatures. En Hegoalde par partis et en Iparralde par blocs ; au parlement, les sièges sont regroupés par blocs. Les listes locales non classées n'entrent pas. Ce n'est pas une institution réelle : c'est un exercice.",
     dataAukeratu: "Date : dans chaque zone, les dernières élections jusqu'à cette date", gaur: "Aujourd'hui", erreproduzitu: "Lire", gelditu: "Arrêter",
+    folio: {
+      botoia: "Le résumé en PDF", fitxategia: "resume", izenburua: "Hauteskunde Behatokia", webgunea: "hautesbehatokia.eus",
+      biztanleak: "Habitants", sekzioak: "Sections", eskualdea: "Comarque", udalerriak: "Communes", ceraZentsua: "Électeurs de l'étranger",
+      azkenHauteskundeak: "Dernières élections", nonDagoAldea: "Ce qui la distingue", bilakaera2011: "Évolution depuis 2011",
+      sekziozSekzio: "Section par section", zatika: "En détail",
+      hartzenEz: "ces élections ne couvrent pas cette zone", puntuGainetik: "points devant la deuxième",
+      zinegotziak: "Conseillers", zinegotziakGuzt: "Conseillers au total", hemen: "ici",
+      azkenaAurrekoa: "La dernière et la précédente", berria: "nouvelle", eta: "et", sekzio: "sections", erdikoa: "médiane",
+      mapaIzenak: { sekzio: "Section", udalerri: "Commune", eskualdea: "Comarque", territorio: "Province", eremua: "Ensemble" },
+      mailaBat: { eh: "Tout le Pays basque", eremua: "Ensemble", territorio: "Province", eskualdea: "Comarque", muni: "Commune" },
+      mapaOina: (x) => `Chaque ${String(x).toLowerCase()}, de la couleur du vainqueur`,
+      etaBeste: (n) => `… et ${n} de plus`,
+      iturriak: "Sources officielles : ministère de l'Intérieur (Espagne), gouvernement basque, gouvernement de Navarre, ministère de l'Intérieur (France), INE · voir « Sources » sur le site",
+    },
   },
   en: {
     erakundeak: {"Eusko Legebiltzarra": "Basque Parliament", "Nafarroako Parlamentua": "Parliament of Navarre", "Arabako Batzar Nagusiak": "General Assembly of Araba", "Bizkaiko Batzar Nagusiak": "General Assembly of Bizkaia", "Gipuzkoako Batzar Nagusiak": "General Assembly of Gipuzkoa", "Diputatuen Kongresua (Hegoaldea)": "Spanish Congress (Hegoalde)"},
@@ -398,6 +441,20 @@ const TESTUAK = {
     fedGarbitu: "Clear", fedTxikienak: "Minimal winning coalitions",
     fedMetodoa: "Method: d'Hondt in each province, with a 3 % threshold of votes for candidates. Hegoalde is allocated by party and Iparralde by bloc; in parliament, seats are grouped by bloc. Unclassified local lists are left out. It is not a real institution: it is an exercise.",
     dataAukeratu: "Date: in each area, the latest elections up to that date", gaur: "Today", erreproduzitu: "Play", gelditu: "Stop",
+    folio: {
+      botoia: "The summary as PDF", fitxategia: "summary", izenburua: "Hauteskunde Behatokia", webgunea: "hautesbehatokia.eus",
+      biztanleak: "Inhabitants", sekzioak: "Census tracts", eskualdea: "Comarca", udalerriak: "Municipalities", ceraZentsua: "Overseas roll",
+      azkenHauteskundeak: "Latest elections", nonDagoAldea: "How it differs", bilakaera2011: "Change since 2011",
+      sekziozSekzio: "Tract by tract", zatika: "Inside",
+      hartzenEz: "this election does not cover this area", puntuGainetik: "points ahead of the second",
+      zinegotziak: "Councillors", zinegotziakGuzt: "Councillors in total", hemen: "here",
+      azkenaAurrekoa: "The latest and the previous one", berria: "new", eta: "and", sekzio: "tracts", erdikoa: "median",
+      mapaIzenak: { sekzio: "Tract", udalerri: "Municipality", eskualdea: "Comarca", territorio: "Province", eremua: "Area" },
+      mailaBat: { eh: "All of Euskal Herria", eremua: "Area", territorio: "Province", eskualdea: "Comarca", muni: "Municipality" },
+      mapaOina: (x) => `Each ${String(x).toLowerCase()}, in the winner's colour`,
+      etaBeste: (n) => `… and ${n} more`,
+      iturriak: "Official sources: Spanish Ministry of the Interior, Basque Government, Government of Navarre, French Ministry of the Interior, INE · see «Sources» on the site",
+    },
   },
 };
 // T: los textos del idioma elegido; lo que falte, en euskera (también dentro de los grupos: kat, mota…)
@@ -438,7 +495,7 @@ const dfmt = (d) => d == null ? "" : `<span class="${d > 0 ? "up" : d < 0 ? "dow
 const BASE = (() => { let b = location.href.split(/[?#]/)[0]; if (/\.html?$/i.test(b)) b = b.slice(0, b.lastIndexOf("/") + 1); if (!b.endsWith("/")) b += "/"; return b; })();
 // Huella del contenido de data/ y geo/ (la pone build_map.py). Va en la URL de cada fichero: si los
 // datos cambian, cambia la URL y el navegador no reutiliza la copia vieja de su caché.
-const VERSION = "782cb9919f0c";
+const VERSION = "1388f40e33ba";
 // Los datos se cargan con fetch() desde el propio sitio (Cloudflare Pages o python -m http.server)
 const load = async (u) => {
   const r = await fetch(new URL(`${u}?v=${VERSION}`, BASE).href, { cache: "force-cache" });
@@ -1245,7 +1302,7 @@ function laburpena() {
   // una elección concreta de solo la CAV o solo Nafarroa: ese es el ámbito (los datos traen «Hegoalde»)
   const bakarEremua = bakarrikDa() && ["EAE", "Nafarroa"].includes(eremua(state.hauteskundea)) ? eremua(state.hauteskundea) : null;
   const izenburua = bakarEremua ? eremuIzena(bakarEremua) : eh.n;
-  return `<div class="hdr"><div><h2>${esc(izenburua)}</h2><div class="meta">${T.motaLuzea[mota(state.hauteskundea)] || T.kat[state.mapa]} · ${zona(state.hauteskundea) === "Azkenak" ? izena(state.hauteskundea).replace(/^[^:]*: /, "") : urtea(state.hauteskundea)}${osag().izena ? ` + ${osag().izena}` : ""} · ${eh.nm} ${T.udalerri}</div></div></div>
+  return `<div class="hdr"><div><h2>${esc(izenburua)}</h2><div class="meta">${T.motaLuzea[mota(state.hauteskundea)] || T.kat[state.mapa]} · ${zona(state.hauteskundea) === "Azkenak" ? izena(state.hauteskundea).replace(/^[^:]*: /, "") : urtea(state.hauteskundea)}${osag().izena ? ` + ${osag().izena}` : ""} · ${eh.nm} ${T.udalerri}</div></div>${folioBotoia()}</div>
     <div class="kpis lau">${partKpi(eh, ehAur)}<div class="kpi"><div class="v">${fmt(bozkatzaileak)}</div><div class="k">${T.bozkatzaileak}</div></div><div class="kpi"><div class="v">${fmt(eh.censo)}</div><div class="k">${T.errolda}</div></div><div class="kpi"><div class="v">${eh.esc ? fmt(eh.esc) : "–"}</div><div class="k">${mota(state.hauteskundea) === "municipales" ? T.zinegotzi : T.eserleku}</div></div></div>
     <div class="lbl">${ikuspegia("eh", estaldura()) === "blokeak" ? T.botoakBlokeka : T.botoakAlderdika} · ${fmt(eh.vc)} ${T.hautagaitzenBotoak}${aldera() ? ` · Δ ${aldera()}` : ""}</div>${filas}
     <div class="lbl">${T.irabazitakoUdalerriak}${state.modua === "winner" ? ` · ${T.mapakoKoloreak}` : ""}</div>${won}${ceraZatia("eh", estaldura(), eh)}${legenda()}`;
@@ -1322,7 +1379,7 @@ function xehetasuna(id) {
   } else {
     tabla = r.c.map(c => `<div class="row"><span class="nm"><i class="sq" style="background:${FAM[c[1]] || FAM.LOCAL}"></i>${short(c[0])}</span><span class="val">${fmt(c[2])} · ${pct(c[3])} ${dfmt(delta(id, c))}${!agg && !esSec && mota(state.hauteskundea) === "municipales" ? ` · ${c[4]} z.` : ""}</span></div><div class="bar"><i style="width:${Math.min(100, c[3] || 0)}%;background:${FAM[c[1]] || FAM.LOCAL}"></i></div>`).join("");
   }
-  return `<div class="hdr"><div><h2>${titulo}</h2><div class="meta">${sub}</div></div>${cierre}</div>
+  return `<div class="hdr"><div><h2>${titulo}</h2><div class="meta">${sub}</div></div>${folioBotoia()}${cierre}</div>
     <div class="kpis">${partKpi(r, pr0)}<div class="kpi"><div class="v">${fmt(r.censo)}</div><div class="k">${T.errolda}</div></div><div class="kpi"><div class="v">${pct(r.m)}</div><div class="k">${T.aldea12}</div></div></div>
     ${(r.m != null && r.m <= 10) || r.la ? `<div style="display:flex;gap:6px;flex-wrap:wrap">${r.m != null && r.m <= 10 ? `<span class="badge">${T.lehian}</span>` : ""}${r.la ? `<span class="badge">${T.zerrendaIrekiak}</span>` : ""}</div>` : ""}
     <div class="rule"></div>${tabla}${ipaBarrutiak(id)}
@@ -1974,6 +2031,573 @@ function fitxaAldatu(f) {
   arnasa().then(() => { if (state.fitxa === f) margotu(); });  // primero se ve la pestaña marcada; luego su contenido (INP)
 }
 document.querySelectorAll("#hudfitxak [role=tab]").forEach(b => { b.setAttribute("aria-selected", b.dataset.fitxa === state.fitxa); b.addEventListener("click", () => fitxaAldatu(b.dataset.fitxa)); });
+// ---- Folioa: el resumen de la zona en un folio A4 (botón «↓ PDF» de la cabecera del panel) ----
+// Dos páginas con lo que la web sabe de la zona elegida: quién es, la última elección de cada mapa y en qué se
+// aparta de lo que la rodea; y cómo ha cambiado desde 2011 y de qué está hecha, con un mapa de sus piezas un
+// escalón por debajo (Euskal Herria → herrialdes, Gipuzkoa → eskualdeak, Goierri → udalerriak, Donostia →
+// sekzioak), cada una del color de quien gana en ella. Las cifras son las que ya publica la web: se leen de
+// data/ como las lee el panel, no se recalculan.
+// El folio va en tema claro (es el que se imprime) y con las letras del sitio.
+// jsPDF y las letras se cargan solo al pulsar: son 530 kB que no hacen falta para ver el mapa.
+
+// ---- paleta (tema claro de tema.css) y medidas del folio, en mm ----
+const FO_TINTA = [0x16, 0x22, 0x2C], FO_TINTA_HI = [0x06, 0x0D, 0x13], FO_LAUSO = [0x41, 0x57, 0x67], FO_ILUN = [0x55, 0x6B, 0x7B];
+const FO_MARRA = [0xA3, 0xB6, 0xC5], FO_MARRA_2 = [0xC6, 0xD4, 0xDD], FO_URREA = [0xA9, 0x76, 0x08];
+const FO_PANELA = [0xF4, 0xF7, 0xF9], FO_GORA = [0x3A, 0x74, 0x0C], FO_BEHERA = [0xA8, 0x3A, 0x1A];
+const FO_W = 210, FO_H = 297, FO_ERTZA = 14, FO_ZAB = FO_W - 2 * FO_ERTZA;
+const FO_C = 1;  // margen interior de cada celda, como el de fpdf2: así el folio del navegador cuadra con el de notebooks/
+// El nivel de dentro: de una zona se enseña lo que la compone un escalón más abajo
+const FO_BARNEKOA = { eh: "territorio", eremua: "territorio", territorio: "eskualdea" };
+const FO_SEK_GEHIENEZ = 900;  // más secciones que esto no se dibujan: el folio tardaría y no se distinguirían
+
+let FO_TRESNAK = null;
+async function folioTresnak() {
+  if (FO_TRESNAK) return FO_TRESNAK;
+  const [, letrak] = await Promise.all([import("./vendor/jspdf.umd.min.js"), import("./vendor/pdf-letrak.js")]);
+  const jsPDF = (window.jspdf || {}).jsPDF;
+  if (!jsPDF) throw new Error("jsPDF");
+  FO_TRESNAK = { jsPDF, letrak: letrak.default };
+  return FO_TRESNAK;
+}
+
+// ---- la zona del folio: la elegida en el mapa (una sección, su municipio) o el total ----
+// De qué nivel es una zona con id «Herrialde|Izena»: el del mapa si es el suyo (Nafarroa es a la vez ámbito y
+// herrialde) y, si no, el primero que la tiene (un enlace puede traer una zona de un nivel que no es el del zoom)
+function folioMaila(s) {
+  const badago = (l) => (GEO[l] || { features: [] }).features.some((f) => String(f.id) === s)
+    || KATS.some((kat) => { const d = datuak(folioBizirik(kat)); return !!(d && d.agg[l] && d.agg[l][s]); });
+  const akt = mailaAktiboa();
+  if (LEVELS[akt] && badago(akt)) return akt;
+  return Object.keys(LEVELS).find(badago) || (LEVELS[akt] ? akt : null);
+}
+function folioZona() {
+  const id = state.hautatua;
+  if (!id) {
+    const r = erregistroGordina("eh", estaldura(), state.hauteskundea);
+    return { maila: "eh", id: "EH", raw: "EH", izena: (r && r.n) || "Euskal Herria", t: "Euskal Herria", nm: r && r.nm };
+  }
+  const s = String(id);
+  if (s.includes("|")) {
+    const [t, n] = s.split("|"), l = folioMaila(s);
+    if (!l) return null;
+    return { maila: l, id: s, raw: n, rawT: t, izena: l === "eremua" ? eremuIzena(n) : lurIzena(n), t: lurIzena(t) };
+  }
+  const ine = s.startsWith("FR") ? s.split("-")[0] : s.slice(0, 5), m = MUNIS[ine];
+  return m ? { maila: "muni", id: ine, raw: ine, izena: m.n, t: lurIzena(m.t), nm: 1 } : null;
+}
+
+// ---- los datos: los mismos ficheros que sirve la web (data/), leídos como los lee el panel ----
+const folioBizirik = (kat) => INDEX.kategoriak[kat].find((k) => zona(k) === "Azkenak") || INDEX.kategoriak[kat].at(-1);
+const folioZatiak = (k) => (zona(k) === "Azkenak" ? (INFO[k].osagaiak || []) : [k]);
+// Lo que la web publica de esa zona en esa elección (sin la vista por bloques del panel: el folio va por familias)
+function folioErreg(z, k) {
+  const d = datuak(k); if (!d || !z) return null;
+  if (z.maila === "muni") return d.muni[z.id] || null;
+  if (z.maila === "eh") return (d.agg.eh && d.agg.eh.EH) || null;
+  return (d.agg[z.maila] || {})[z.id] || null;
+}
+// Las convocatorias que cubren la zona dentro de la vigente de esa categoría: las «Azkenak» juntan una por ámbito
+// (EAE, Nafarroa, Iparralde); de una zona de un solo ámbito sale una, de Euskal Herria las tres
+function folioOsagaiak(z, kat) {
+  const k = folioBizirik(kat), out = [];
+  for (const x of folioZatiak(k)) {
+    const r = folioErreg(z, x);
+    if (r) out.push({ k: x, eremua: T.zonak[eremua(x)] || eremua(x), izena: izena(x), rec: r });
+  }
+  return out;
+}
+// Los municipios de la zona. La web solo publica la pertenencia de los herrialdes y las comarcas (index.json):
+// en los demás niveles agregados (barrutis, barruti judizialak…) no se puede saber, y el folio lo dice.
+function folioIneak(z) {
+  if (z.maila === "muni") return new Set([z.id]);
+  if (z.maila === "eh") return new Set(Object.keys(MUNIS));
+  const bal = Object.entries(MUNIS);
+  if (z.maila === "territorio") return new Set(bal.filter(([, m]) => m.t === z.raw).map(([i]) => i));
+  if (z.maila === "eremua") return new Set(bal.filter(([, m]) => LUR_ZONA[m.t] === z.raw).map(([i]) => i));
+  if (z.maila === "eskualdea") return new Set(bal.filter(([, m]) => m.e === z.raw && m.t === z.rawT).map(([i]) => i));
+  return null;
+}
+// Las zonas del nivel de dentro, con su resultado: Map(id → registro). Vacío si lo de dentro son municipios
+function folioBarneZonak(z, k) {
+  const maila = FO_BARNEKOA[z.maila], out = new Map();
+  if (!maila) return out;
+  const agg = (datuak(k) || { agg: {} }).agg[maila] || {};
+  for (const [id, r] of Object.entries(agg)) {
+    if (z.maila === "eh" || (z.maila === "eremua" ? LUR_ZONA[r.t] === z.raw : r.t === z.raw)) out.set(id, r);
+  }
+  return out;
+}
+// Las secciones de la elección (y de sus componentes), con sus alias: {cusec: registro}
+function folioSekzioak(z, k) {
+  const ineak = folioIneak(z); if (!ineak) return [];
+  const out = [];
+  for (const x of [k, ...folioZatiak(k)]) {
+    const d = datuak(x); if (!d || !d.sec) continue;
+    for (const [s, r] of Object.entries(d.sec)) if (ineak.has(s.slice(0, 5)) && !out.some((o) => o[0] === s)) out.push([s, r]);
+  }
+  return out.sort((a, b) => (a[0] < b[0] ? -1 : 1));
+}
+// Elección a elección, lo que la web dibuja en «Bilakaera» (data/bilakaera/): [{k, e}], de la más antigua a la última
+function folioBilakaera(z, kat, bil) {
+  if (!bil) return [];
+  const H = bil.hk ? bil.hk[kat] || {} : Object.fromEntries(Object.entries(bil.h || {}).filter(([k]) => INDEX.kategoriak[kat].includes(k)));
+  return Object.keys(H).sort((a, b) => dataZ(a) - dataZ(b)).map((k) => ({ k, e: H[k] }));
+}
+const folioPct = (e, f) => { const r = e[3].find((x) => x[0] === f); return r ? r[1] : null; };
+// Puntos de más o de menos que su herrialde, su ámbito y Euskal Herria, familia a familia
+function folioAldeak(z, kat) {
+  const d = datuak(folioBizirik(kat)); if (!d) return null;
+  const pcts = (r) => (r ? Object.fromEntries(r.c.map((c) => [c[1], c[3]])) : {});
+  const nirea = pcts(folioErreg(z, folioBizirik(kat)));
+  if (!Object.keys(nirea).length) return null;
+  const lur = z.maila === "muni" ? MUNIS[z.id].t : z.maila === "territorio" ? z.raw : z.rawT;
+  const bera = { territorio: "herrialdea", eremua: "eremua", eh: "eh" }[z.maila];  // una zona no se compara consigo misma
+  const ref = [];
+  const hautagaiak = [["herrialdea", lurIzena(lur), d.agg.territorio && d.agg.territorio[`${lur}|${lur}`]],
+    ["eremua", eremuIzena(LUR_ZONA[lur]), d.agg.eremua && d.agg.eremua[`${LUR_ZONA[lur]}|${LUR_ZONA[lur]}`]],
+    ["eh", "Euskal Herria", d.agg.eh && d.agg.eh.EH]];
+  for (const [gakoa, etiketa, rec] of hautagaiak) {
+    if (gakoa === bera || (bera === "eremua" && gakoa === "herrialdea")) continue;
+    const p = pcts(rec); if (Object.keys(p).length) ref.push({ gakoa, etiketa, p });
+  }
+  if (!ref.length) return null;
+  const fam = Object.keys(nirea).filter((f) => nirea[f] != null).sort((a, b) => nirea[b] - nirea[a]);
+  return { fam, nirea, ref };
+}
+
+// Todo lo que el folio necesita, descargado (lo que ya esté en memoria no se vuelve a pedir)
+async function folioDatuak(z) {
+  const kk = new Set();
+  for (const kat of KATS) for (const x of [folioBizirik(kat), ...folioZatiak(folioBizirik(kat))]) kk.add(x);
+  const est = folioBizirik("estatu");
+  const bilFitx = z.maila === "muni" ? z.id : `maila/${z.maila}`;
+  const maila = FO_BARNEKOA[z.maila];
+  // Primero las elecciones: las secciones (data/<k>_sec.json) se cuelgan de ellas y no se pueden pedir antes
+  const [bil, sekGeo] = await Promise.all([
+    load(`data/bilakaera/${bilFitx}.json`).catch(() => null),
+    z.maila === "muni" ? load(`geo/sekzioak_${sekzioUrtea(est)}.json`).catch(() => null) : null,
+    ...[...kk].map(kargatu),
+    maila ? mailaKargatu(maila) : mailaKargatu(z.maila).catch(() => {}),
+    GEO.muni.features.length ? null : load("geo/udalerriak.geojson").then((g) => { GEO.muni = g; }).catch(() => {}),
+  ]);
+  if (z.maila === "muni") await Promise.all([est, ...folioZatiak(est)].map(sekzioDatuak));
+  const muniGeo = GEO.muni.features.length ? GEO.muni : null;
+  const d = bil && z.maila !== "muni" ? bil[z.id] || null : bil;
+  return { bil: d, sekGeo, muniGeo };
+}
+
+// Los polígonos de lo que compone la zona y qué nivel son: [[geometría, registro|null], …]
+function folioGeometriak(z, kat, D) {
+  const k = folioBizirik(kat), maila = FO_BARNEKOA[z.maila];
+  if (maila) {
+    const kideak = folioBarneZonak(z, k);
+    const feats = (GEO[maila] || { features: [] }).features.filter((f) => kideak.has(String(f.id)));
+    if (feats.length) return { geoak: feats.map((f) => [f.geometry, kideak.get(String(f.id))]), mota: maila };
+  }
+  const ineak = folioIneak(z);
+  if (!ineak) return { geoak: [], mota: "udalerri" };
+  if (z.maila === "muni" && D.sekGeo) {
+    const d = datuak(k) || {}, alias = d.secAlias || {}, sek = Object.fromEntries(folioSekzioak(z, k));
+    const feats = D.sekGeo.features.filter((f) => ineak.has(f.properties.ine));
+    if (feats.length && feats.length <= FO_SEK_GEHIENEZ && feats.some((f) => sek[f.properties.cusec] || sek[alias[f.properties.cusec]]))
+      return { geoak: feats.map((f) => [f.geometry, sek[f.properties.cusec] || sek[alias[f.properties.cusec]] || null]), mota: "sekzio" };
+  }
+  const gm = D.muniGeo || GEO.muni;  // Iparralde y las elecciones sin secciones: el municipio entero
+  const muni = (datuak(k) || { muni: {} }).muni;
+  const feats = gm.features.filter((f) => ineak.has(f.properties.ine));
+  return { geoak: feats.map((f) => [f.geometry, muni[f.properties.ine] || null]), mota: "udalerri" };
+}
+// El contorno de la zona, para cerrar el mapa
+function folioIngurua(z) {
+  const gm = z.maila === "muni" ? GEO.muni : GEO[z.maila];
+  if (!gm || !gm.features.length) return [];
+  return gm.features.filter((f) => String(f.id) === String(z.id)).map((f) => f.geometry);
+}
+
+// ---- de cifras y nombres a texto ----
+const foKol = (f) => { const h = (FAM[f] || FAM.LOCAL || "#9AA39E").slice(1); return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16)); };
+const foLabur = (f, kat) => (f === "LOCAL" ? (kat === "udal" ? T.tokikoak : T.gainontzekoak) : (T.blokeak[f] || INDEX.corta[f] || f));
+const foPct = (v, hamarren = 1) => (v == null ? "–" : v.toLocaleString(LOKALEA, { minimumFractionDigits: hamarren, maximumFractionDigits: hamarren }) + " %");
+const foHandiz = (s) => String(s).charAt(0).toUpperCase() + String(s).slice(1);  // «parte-hartzea» al empezar una línea
+const foPtu = (v) => (v == null ? "–" : (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toLocaleString(LOKALEA, { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
+
+// ---- piezas sueltas (una celda de fpdf2: texto centrado en una caja de 0,42 × el cuerpo) ----
+function foT(doc, x, y, s, letra = "Saira", neurria = 9, kol = FO_TINTA, w = 0, align = "L") {
+  doc.setFont(letra, "normal"); doc.setFontSize(neurria); doc.setTextColor(kol[0], kol[1], kol[2]);
+  const ww = w || FO_ZAB;
+  const xx = align === "R" ? x + ww - FO_C : align === "C" ? x + ww / 2 : x + FO_C;
+  doc.text(String(s), xx, y + neurria * 0.21, { baseline: "middle", align: align === "R" ? "right" : align === "C" ? "center" : "left" });
+}
+function foMoztu(doc, s, w, letra = "Saira", neurria = 8) {  // recorta a lo ancho que hay, con puntos suspensivos
+  doc.setFont(letra, "normal"); doc.setFontSize(neurria);
+  s = String(s);
+  if (doc.getTextWidth(s) <= w) return s;
+  while (s && doc.getTextWidth(s + "…") > w) s = s.slice(0, -1);
+  return s.replace(/[ ,·]+$/, "") + "…";
+}
+function foBete(doc, x, y, w, h, kol) { doc.setFillColor(kol[0], kol[1], kol[2]); doc.rect(x, y, w, h, "F"); }
+function foMarra(doc, x1, y1, x2, y2, kol = FO_MARRA, zab = 0.3) {
+  doc.setDrawColor(kol[0], kol[1], kol[2]); doc.setLineWidth(zab); doc.line(x1, y1, x2, y2);
+}
+function foAtala(doc, y, izenburua) {  // título de sección: filete y rótulo en mayúsculas
+  foMarra(doc, FO_ERTZA, y, FO_W - FO_ERTZA, y);
+  foT(doc, FO_ERTZA, y + 1.6, izenburua.toUpperCase(), "SairaB", 8, FO_URREA);
+  return y + 7.5;
+}
+function foBarra(doc, x, y, w, h, zatiak) {  // barra de 100 % repartida por familias, con el color de cada una
+  const guzt = zatiak.reduce((a, [, p]) => a + (p || 0), 0) || 100;
+  for (const [fam, pct_] of zatiak) {
+    const zab = w * (pct_ || 0) / guzt;
+    if (zab < 0.6) continue;
+    foBete(doc, x, y, zab, h, foKol(fam));
+    x += zab;
+  }
+}
+function foTxipa(doc, x, y, fam, oharra, w = 44, neurria = 7.2) {  // cuadradito de color con su rótulo
+  foBete(doc, x, y + 0.5, 2.2, 2.2, foKol(fam));
+  foT(doc, x + 3.2, y, foMoztu(doc, oharra, w - 4, "Saira", neurria), "Saira", neurria, FO_LAUSO, w - 4);
+}
+
+// ---- el mapa de la zona ----
+// Proyección sencilla, la del mapa a esta escala: los grados de longitud se encogen con el coseno de la latitud
+const foEraztunak = (g) => (g.type === "Polygon" ? g.coordinates : g.coordinates.flat());
+function foMapa(doc, geoak, x, y, w, h, ingurua) {
+  const eraztunak = geoak.map(([g, r]) => [foEraztunak(g), r]);
+  const puntuak = eraztunak.flatMap(([ez]) => ez.flat());
+  if (!puntuak.length) return;
+  const lon = puntuak.map((p) => p[0]), lat = puntuak.map((p) => p[1]);
+  const lon0 = Math.min(...lon), lon1 = Math.max(...lon), lat0 = Math.min(...lat), lat1 = Math.max(...lat);
+  const kx = Math.cos((lat0 + lat1) / 2 * Math.PI / 180);
+  const zab = Math.max((lon1 - lon0) * kx, 1e-6), alt = Math.max(lat1 - lat0, 1e-6);
+  const s = Math.min(w / zab, h / alt);
+  const dx = x + (w - zab * s) / 2 - lon0 * kx * s, dy = y + (h - alt * s) / 2 + lat1 * s;
+  const proi = (p) => [p[0] * kx * s + dx, dy - p[1] * s];
+
+  doc.setLineWidth(0.1); doc.setDrawColor(255, 255, 255);
+  for (const [ez, rec] of eraztunak) {
+    const kol = foKol((rec || {}).gf);
+    doc.setFillColor(kol[0], kol[1], kol[2]);
+    for (const eraztuna of ez) {
+      let aurrekoa = null;
+      for (let i = 0; i < eraztuna.length; i++) {
+        const pt = proi(eraztuna[i]);
+        // a esta escala, dos puntos tan juntos son el mismo (menos trabajo y folio más liviano)
+        if (aurrekoa && i < eraztuna.length - 1 && Math.abs(pt[0] - aurrekoa[0]) + Math.abs(pt[1] - aurrekoa[1]) < 0.12) continue;
+        if (aurrekoa === null) doc.moveTo(pt[0], pt[1]); else doc.lineTo(pt[0], pt[1]);
+        aurrekoa = pt;
+      }
+      doc.close();
+    }
+    doc.fillStrokeEvenOdd();  // los agujeros (enclaves, lagos) quedan huecos
+  }
+  for (const g of ingurua || []) {  // el contorno de la zona, por encima de las piezas
+    doc.setDrawColor(FO_LAUSO[0], FO_LAUSO[1], FO_LAUSO[2]); doc.setLineWidth(0.25);
+    for (const eraztuna of foEraztunak(g)) {
+      eraztuna.forEach((p, i) => { const pt = proi(p); if (i === 0) doc.moveTo(pt[0], pt[1]); else doc.lineTo(pt[0], pt[1]); });
+      doc.close();
+    }
+    doc.stroke();
+  }
+}
+
+// ---- bloques del folio ----
+function foGoiburua(doc, z, orria, guztira) {
+  const m = z.maila === "muni" ? MUNIS[z.id] : null;
+  const azpia = [m && m.o !== z.izena ? m.o : null, T.folio.mailaBat[z.maila] || T.mailak[z.maila] || z.maila,
+    m ? lurIzena(m.t) : z.maila === "eh" ? null : z.t, m ? m.e : null].filter(Boolean).join(" · ");
+  foT(doc, FO_ERTZA, FO_ERTZA, z.izena, "SairaB", 25, FO_TINTA_HI, 120);
+  foT(doc, FO_ERTZA, FO_ERTZA + 11.5, azpia, "Saira", 9.5, FO_LAUSO, 120);
+  foT(doc, FO_W - FO_ERTZA - 70, FO_ERTZA + 1, T.folio.izenburua, "SairaM", 9, FO_TINTA, 70, "R");
+  foT(doc, FO_W - FO_ERTZA - 70, FO_ERTZA + 6, T.folio.webgunea, "Saira", 8, FO_ILUN, 70, "R");
+  foT(doc, FO_W - FO_ERTZA - 70, FO_ERTZA + 10.5, `${new Date().toISOString().slice(0, 10)}  ·  ${orria}/${guztira}`,
+    "Mono", 7.5, FO_ILUN, 70, "R");
+  return FO_ERTZA + 18;
+}
+
+function foKpiak(doc, z, y, D) {
+  const est = folioBizirik("estatu"), r = folioErreg(z, est) || {};
+  const kutxak = [[T.folio.biztanleak, fmt(r.pob)], [T.errolda, fmt(r.censo)]];
+  if (z.maila === "muni") {
+    const sek = folioSekzioak(z, est);
+    kutxak.push([T.folio.sekzioak, sek.length ? fmt(sek.length) : "–"], [T.folio.eskualdea, MUNIS[z.id].e || "–"]);
+  } else {
+    kutxak.push([T.folio.udalerriak, fmt(r.nm != null ? r.nm : z.nm)]);
+    const barne = folioBarneZonak(z, est);
+    if (barne.size) kutxak.push([T.mailak[FO_BARNEKOA[z.maila]] || "", fmt(barne.size)]);
+  }
+  if (r.ce) kutxak.push([T.folio.ceraZentsua, fmt(r.ce[0])]);
+  const w = (FO_ZAB - 3 * (kutxak.length - 1)) / kutxak.length;
+  kutxak.forEach(([etiketa, balioa], i) => {
+    const x = FO_ERTZA + i * (w + 3);
+    foBete(doc, x, y, w, 15, FO_PANELA);
+    foT(doc, x + 3, y + 2.8, foMoztu(doc, String(etiketa).toUpperCase(), w - 6, "Saira", 7), "Saira", 7, FO_ILUN, w - 6);
+    foT(doc, x + 3, y + 7.4, foMoztu(doc, balioa, w - 6, "SairaM", 12),
+      /^[\d–]/.test(String(balioa)) ? "MonoM" : "SairaM", 12, FO_TINTA_HI, w - 6);
+  });
+  return y + 21;
+}
+
+// Un mapa (categoría) con su elección vigente: participación, quién gana y el reparto del voto
+function foHauteskundea(doc, z, kat, y) {
+  const k = folioBizirik(kat), r = folioErreg(z, k), wEzk = 52;
+  foT(doc, FO_ERTZA, y, T.kat[kat] || kat, "SairaM", 11, FO_TINTA_HI, wEzk);
+  const osag = folioOsagaiak(z, kat);
+  const izen = osag.length === 1 ? [osag[0].izena] : izena(k).split(": ").at(-1).split(" + ");
+  izen.slice(0, 2).forEach((zati, i) => foT(doc, FO_ERTZA, y + 5 + i * 3.6, foMoztu(doc, zati, wEzk, "Saira", 7.5), "Saira", 7.5, FO_ILUN, wEzk));
+  if (!r) {
+    foT(doc, FO_ERTZA + 58, y + 2, T.folio.hartzenEz, "Saira", 8, FO_ILUN);
+    return y + 16;
+  }
+  foT(doc, FO_ERTZA, y + 13, `${foHandiz(T.partehartzea)} ${foPct(r.part, 2)}`, "Mono", 7.5, FO_LAUSO, wEzk);
+  if (r.pE != null) foT(doc, FO_ERTZA, y + 17, `${T.egoiliarrak} ${foPct(r.pE, 2)}`, "Mono", 7, FO_ILUN, wEzk);
+
+  const x0 = FO_ERTZA + 58, w0 = FO_ZAB - 58;
+  const bigarrena = r.c.find((c) => c[1] !== r.gf);
+  const irabPct = (r.c.find((c) => c[1] === r.gf) || [])[3];
+  let irab = `${foLabur(r.gf, kat)} ${foPct(irabPct)}`;
+  if (r.m != null && bigarrena) irab += `   ·   ${foPtu(r.m)} ${T.folio.puntuGainetik} (${foLabur(bigarrena[1], kat)})`;
+  foT(doc, x0, y, foMoztu(doc, irab, w0, "SairaM", 9.5), "SairaM", 9.5, FO_TINTA, w0);
+  foBarra(doc, x0, y + 5.2, w0, 5.2, r.c.map((c) => [c[1], c[3] || 0]));
+  const zut = w0 / 3, kop = Math.min(r.c.length, 6);
+  for (let i = 0; i < kop; i++) {
+    const c = r.c[i], izen_ = z.maila === "muni" ? c[0] : foLabur(c[1], kat);
+    foTxipa(doc, x0 + (i % 3) * zut, y + 12.5 + Math.floor(i / 3) * 4.4, c[1], `${izen_} ${foPct(c[3])}`, zut);
+  }
+  let azkena = y + 12.5 + (Math.floor((kop - 1) / 3) + 1) * 4.4;
+  if (r.esc) {
+    // en un municipio, los concejales de cada candidatura; en una zona agregada, solo se publica el total
+    const eser = r.c.filter((c) => c.length > 4 && c[4]);
+    const testua = eser.length ? `${T.folio.zinegotziak}: ` + eser.map((c) => `${foLabur(c[1], kat)} ${c[4]}`).join(" · ")
+      : `${T.folio.zinegotziakGuzt}: ${fmt(r.esc)}`;
+    foT(doc, x0, azkena, foMoztu(doc, testua, w0, "Mono", 7.2), "Mono", 7.2, FO_LAUSO, w0);
+    azkena += 4.2;
+  }
+  if (r.won && r.won[r.gf]) {
+    foT(doc, x0, azkena, `${T.irabazitakoUdalerriak}: ${r.won[r.gf]} / ${fmt(r.nm)}`, "Mono", 7.2, FO_LAUSO, w0);
+    azkena += 4.2;
+  }
+  if (osag.length > 1) {  // la zona coge varios ámbitos y cada uno vota su propia elección
+    for (const o of osag) {
+      const pcti = (o.rec.c.find((c) => c[1] === o.rec.gf) || [])[3];
+      foTxipa(doc, x0, azkena, o.rec.gf, `${o.eremua} · ${o.izena} · ${T.partehartzea.toLowerCase()} ${foPct(o.rec.part)} · ${foLabur(o.rec.gf, kat)} ${foPct(pcti)}`, w0, 7);
+      azkena += 4.2;
+    }
+  }
+  return Math.max(azkena, y + 22) + 2.5;
+}
+
+// En qué se aparta de su herrialde, su ámbito y Euskal Herria: puntos arriba o abajo, familia a familia
+function foAldeak(doc, z, kat, y) {
+  const a = folioAldeak(z, kat); if (!a) return y;
+  const wIzen = 56, wPct = 18, wZut = (FO_ZAB - wIzen - wPct) / a.ref.length;
+  foT(doc, FO_ERTZA, y, foMoztu(doc, izena(folioBizirik(kat)), wIzen, "Saira", 7.5), "Saira", 7.5, FO_ILUN, wIzen);
+  foT(doc, FO_ERTZA + wIzen, y, T.folio.hemen, "Saira", 7, FO_ILUN, wPct, "R");
+  a.ref.forEach((ref, i) => foT(doc, FO_ERTZA + wIzen + wPct + i * wZut, y, foMoztu(doc, ref.etiketa, wZut - 4, "Saira", 7), "Saira", 7, FO_ILUN, wZut - 4, "C"));
+  y += 5.5;
+  for (const fam of a.fam.slice(0, 7)) {
+    foTxipa(doc, FO_ERTZA, y, fam, foLabur(fam, kat), wIzen, 8);
+    foT(doc, FO_ERTZA + wIzen, y, foPct(a.nirea[fam]), "MonoM", 8, FO_TINTA, wPct, "R");
+    a.ref.forEach((ref, i) => {
+      if (ref.p[fam] == null) return;
+      const v = Math.round((a.nirea[fam] - ref.p[fam]) * 100) / 100, x0 = FO_ERTZA + wIzen + wPct + i * wZut;
+      foT(doc, x0, y, foPtu(v), "Mono", 7.5, v > 0 ? FO_GORA : FO_BEHERA, 13, "R");
+      const erdia = x0 + 17 + (wZut - 21) / 2;  // eje del cero, en medio del hueco de la columna
+      foMarra(doc, erdia, y - 0.3, erdia, y + 3.6, FO_MARRA_2, 0.15);
+      const zab = Math.min(Math.abs(v), 15) / 15 * (wZut - 21) / 2;
+      foBete(doc, v > 0 ? erdia : erdia - zab, y + 0.8, zab, 2.2, v > 0 ? FO_GORA : FO_BEHERA);
+    });
+    y += 4.7;
+  }
+  return y + 2;
+}
+
+// Mini gráfico de líneas: el % de cada familia, elección a elección (como la pestaña «Bilakaera»)
+function foGrafikoa(doc, z, kat, x, y, w, h, D) {
+  const bil = folioBilakaera(z, kat, D.bil);
+  foT(doc, x, y, T.kat[kat] || kat, "SairaM", 9, FO_TINTA_HI, w);
+  if (!bil.length) { foT(doc, x, y + 5.5, T.daturikEz, "Saira", 7.5, FO_ILUN, w); return; }
+  const azk = bil.at(-1).e;
+  const fam = [...new Set(bil.flatMap((b) => b.e[3].map((p) => p[0])))]
+    .sort((a, b) => (folioPct(azk, b) ?? -1) - (folioPct(azk, a) ?? -1)).slice(0, 5);
+  const gx = x + 7, gy = y + 6, gw = w - 7, gh = h - 20;
+  const gehienez = Math.max(...bil.flatMap((b) => fam.map((f) => folioPct(b.e, f) || 0)));
+  const goia = Math.max(10, Math.min(70, 10 * (Math.floor(gehienez / 10) + 1)));
+  for (let v = 0; v <= goia; v += goia <= 40 ? 10 : 20) {
+    const yy = gy + gh * (1 - v / goia);
+    foMarra(doc, gx, yy, gx + gw, yy, FO_MARRA_2, 0.15);
+    foT(doc, gx - 7, yy - 1.3, String(v), "Mono", 5.5, FO_ILUN, 5.5, "R");
+  }
+  const n = bil.length, xs = bil.map((_b, i) => gx + (n > 1 ? gw * i / (n - 1) : gw / 2));
+  doc.setLineWidth(0.5);
+  for (const f of fam) {
+    const kol = foKol(f); doc.setDrawColor(kol[0], kol[1], kol[2]);
+    let aurrekoa = null;
+    bil.forEach((b, i) => {
+      const v = folioPct(b.e, f);
+      if (v == null) { aurrekoa = null; return; }  // no se presentó: la línea se corta
+      const pt = [xs[i], gy + gh * (1 - v / goia)];
+      if (aurrekoa) doc.line(aurrekoa[0], aurrekoa[1], pt[0], pt[1]);
+      aurrekoa = pt;
+    });
+  }
+  let azkenX = -99;
+  bil.forEach((b, i) => {
+    if (xs[i] - azkenX < 11) return;
+    foT(doc, xs[i] - 5, gy + gh + 1.5, urtea(b.k).slice(0, 4), "Mono", 5.5, FO_ILUN, 10, "C");
+    azkenX = xs[i];
+  });
+  foT(doc, x, y + h - 9.5, `${foHandiz(T.partehartzea)}: ${foPct(bil[0].e[0])} (${urtea(bil[0].k).slice(0, 4)}) ${T.folio.eta} ${foPct(azk[0])} (${urtea(bil.at(-1).k).slice(0, 4)})`,
+    "Mono", 6.5, FO_LAUSO, w);
+  fam.slice(0, 3).forEach((f, i) => foTxipa(doc, x + i * (w / 3), y + h - 5, f, foLabur(f, kat), w / 3, 6.5));
+}
+
+// El hueco que deja la rejilla: la elección vigente frente a la anterior, quién sube y quién baja
+function foAldaketa(doc, z, kat, x, y, w, h, D) {
+  const bil = folioBilakaera(z, kat, D.bil);
+  if (bil.length < 2) return;
+  const azk = bil.at(-1), aur = bil.at(-2);
+  foT(doc, x, y, `${T.folio.azkenaAurrekoa} · ${T.kat[kat] || kat}`, "SairaM", 9, FO_TINTA_HI, w);
+  foT(doc, x, y + 5.5, foMoztu(doc, `${izena(aur.k)} ${T.folio.eta} ${izena(azk.k)}`, w, "Saira", 7), "Saira", 7, FO_ILUN, w);
+  const dp = Math.round((azk.e[0] - aur.e[0]) * 100) / 100;
+  foT(doc, x, y + 10, `${foHandiz(T.partehartzea)} ${foPtu(dp)} ${T.puntu}`, "Mono", 7, dp > 0 ? FO_GORA : FO_BEHERA, w);
+  let yy = y + 15;
+  const fam = azk.e[3].map((p) => p[0]).sort((a, b) => (folioPct(azk.e, b) ?? -1) - (folioPct(azk.e, a) ?? -1));
+  for (const f of fam.slice(0, 6)) {
+    const v = folioPct(azk.e, f), aurv = folioPct(aur.e, f);
+    foTxipa(doc, x, yy, f, foLabur(f, kat), w - 26, 7.5);
+    foT(doc, x + w - 26, yy, foPct(v), "Mono", 7.5, FO_LAUSO, 14, "R");
+    foT(doc, x + w - 11, yy, aurv == null ? T.folio.berria : foPtu(Math.round((v - aurv) * 100) / 100),
+      "MonoM", 7.5, aurv == null ? FO_ILUN : v - aurv > 0 ? FO_GORA : FO_BEHERA, 11, "R");
+    yy += 4.4;
+  }
+}
+
+// El grano más fino: las secciones censales del municipio, para ver si vota igual por todas partes
+function foSekzioakBlokea(doc, z, kat, y, D) {
+  const k = folioBizirik(kat), sek = folioSekzioak(z, k);
+  if (!sek.length) return y;
+  const irab = new Map();
+  for (const [, r] of sek) irab.set(r.gf, (irab.get(r.gf) || 0) + 1);
+  const parts = sek.map(([, r]) => r.part).filter((p) => p != null).sort((a, b) => a - b);
+  const n2 = parts.length;  // la mediana: con un número par de secciones, la media de las dos de en medio
+  const erdikoa = !n2 ? null : n2 % 2 ? parts[(n2 - 1) / 2] : (parts[n2 / 2 - 1] + parts[n2 / 2]) / 2;
+  foT(doc, FO_ERTZA, y, foMoztu(doc, `${T.kat[kat] || kat} · ${izena(k)}`, FO_ZAB, "Mono", 7.2), "Mono", 7.2, FO_LAUSO, FO_ZAB);
+  y += 4.2;
+  foT(doc, FO_ERTZA, y, `${sek.length} ${T.folio.sekzio} · ${T.partehartzea.toLowerCase()} ${foPct(parts[0])} – ${foPct(parts.at(-1))} (${T.folio.erdikoa} ${foPct(erdikoa)})`,
+    "Mono", 7.2, FO_LAUSO, FO_ZAB);
+  y += 5;
+  const mapaW = 96, h = Math.max(36, Math.min(FO_H - FO_ERTZA - 14 - y, 95));
+  const { geoak, mota } = folioGeometriak(z, kat, D);
+  foMapa(doc, geoak, FO_ERTZA, y, mapaW, h, folioIngurua(z));
+  foT(doc, FO_ERTZA, y + h + 0.5, T.folio.mapaOina(T.folio.mapaIzenak[mota] || mota), "Saira", 6.5, FO_ILUN, mapaW);
+  const x0 = FO_ERTZA + mapaW + 8, w0 = FO_ZAB - mapaW - 8;
+  const zerrenda = [...irab.entries()].sort((a, b) => b[1] - a[1]);
+  foBarra(doc, x0, y, w0, 5.2, zerrenda);
+  zerrenda.forEach(([f, n], i) => foTxipa(doc, x0, y + 7.5 + i * 4.8, f, `${foLabur(f, kat)}: ${n} ${T.folio.sekzio}`, w0, 7.5));
+  return y + h + 5;
+}
+
+// Para una zona agregada, de qué está hecha: el mapa y sus herrialdes, comarcas o municipios
+function foZatikaBlokea(doc, z, kat, y, D) {
+  const k = folioBizirik(kat);
+  const barne = folioBarneZonak(z, k);
+  let zerrenda;
+  if (barne.size) {
+    zerrenda = [...barne.values()].map((r) => ({ izena: lurIzena(r.n), part: r.part, gf: r.gf, m: r.m }));
+  } else {
+    const ineak = folioIneak(z), muni = (datuak(k) || { muni: {} }).muni;
+    if (!ineak) return y;
+    zerrenda = [...ineak].map((i) => muni[i]).filter(Boolean)
+      .sort((a, b) => (b.pob || 0) - (a.pob || 0)).map((r) => ({ izena: r.n, part: r.part, gf: r.gf, m: r.m }));
+  }
+  if (!zerrenda.length) return y;
+  foT(doc, FO_ERTZA, y, foMoztu(doc, `${T.kat[kat] || kat} · ${izena(k)}`, FO_ZAB, "Mono", 7.2), "Mono", 7.2, FO_LAUSO, FO_ZAB);
+  y += 5;
+  const { geoak, mota } = folioGeometriak(z, kat, D);
+  const mapaW = 70, h = Math.max(40, Math.min(FO_H - FO_ERTZA - 14 - y, 95));
+  if (geoak.length) {
+    foMapa(doc, geoak, FO_ERTZA, y, mapaW, h, folioIngurua(z));
+    foT(doc, FO_ERTZA, y + h + 0.5, T.folio.mapaOina(T.folio.mapaIzenak[mota] || mota), "Saira", 6.5, FO_ILUN, mapaW);
+  }
+  const x0 = FO_ERTZA + (geoak.length ? mapaW + 8 : 0), wIzen = 40;
+  let yy = y;
+  for (const fila of zerrenda.slice(0, 9)) {
+    foT(doc, x0, yy, foMoztu(doc, fila.izena, wIzen, "Saira", 8), "Saira", 8, FO_TINTA, wIzen);
+    foT(doc, x0 + wIzen, yy, foPct(fila.part), "Mono", 7.5, FO_LAUSO, 16, "R");
+    foTxipa(doc, x0 + wIzen + 19, yy, fila.gf, `${foLabur(fila.gf, kat)} (${foPtu(fila.m)})`, FO_W - FO_ERTZA - (x0 + wIzen + 19), 7.5);
+    yy += 4.8;
+  }
+  if (zerrenda.length > 9) { foT(doc, x0, yy, T.folio.etaBeste(zerrenda.length - 9), "Saira", 7.5, FO_ILUN, 60); yy += 4.8; }
+  return Math.max(yy, y + (geoak.length ? h + 5 : 0)) + 2;
+}
+
+function foOina(doc, z) {  // pie: de dónde salen los datos y dónde está esta misma vista en la web
+  const y = FO_H - FO_ERTZA - 8;
+  foMarra(doc, FO_ERTZA, y, FO_W - FO_ERTZA, y);
+  foT(doc, FO_ERTZA, y + 1.8, T.folio.iturriak, "Saira", 7, FO_ILUN);
+  foT(doc, FO_ERTZA, y + 5.4, foMoztu(doc, folioLotura(z), FO_ZAB, "Mono", 6.5), "Mono", 6.5, FO_LAUSO);
+}
+const folioLotura = (z) => `${BASE.replace(/\/$/, "")}/#k=estatu&y=${folioBizirik("estatu")}${z.maila === "eh" ? "" : `&s=${z.id}`}${HIZK !== "eu" ? `&l=${HIZK}` : ""}`;
+
+// ---- el folio ----
+async function folioa() {
+  const z = folioZona(); if (!z) return null;
+  const [{ jsPDF, letrak }, D] = await Promise.all([folioTresnak(), folioDatuak(z)]);
+  const doc = new jsPDF({ orientation: "p", unit: "mm", format: "a4", compress: true });  // comprimido: el folio baja de 200 kB a unas decenas
+  for (const [izen, b64] of Object.entries(letrak)) { doc.addFileToVFS(`${izen}.ttf`, b64); doc.addFont(`${izen}.ttf`, izen, "normal"); }
+  doc.setProperties({ title: `${z.izena} · ${T.folio.izenburua}`, creator: T.folio.izenburua });
+
+  // 1. quién es, la última de cada mapa y en qué se aparta de lo que la rodea
+  let y = foKpiak(doc, z, foGoiburua(doc, z, 1, 2), D);
+  y = foAtala(doc, y, T.folio.azkenHauteskundeak);
+  for (const kat of KATS) y = foHauteskundea(doc, z, kat, y);
+  if (folioAldeak(z, "estatu")) {  // Euskal Herria no se compara con nada: no hay sección
+    y = foAtala(doc, y + 1, T.folio.nonDagoAldea);
+    foAldeak(doc, z, "estatu", y);
+  }
+  foOina(doc, z);
+
+  // 2. cómo ha cambiado y de qué está hecha
+  doc.addPage();
+  y = foAtala(doc, foGoiburua(doc, z, 2, 2), T.folio.bilakaera2011);
+  const zutW = (FO_ZAB - 10) / 2;
+  KATS.forEach((kat, i) => foGrafikoa(doc, z, kat, FO_ERTZA + (i % 2) * (zutW + 10), y + Math.floor(i / 2) * 42, zutW, 38, D));
+  if (KATS.length % 2) foAldaketa(doc, z, "estatu", FO_ERTZA + zutW + 10, y + Math.floor(KATS.length / 2) * 42, zutW, 38, D);
+  y += (Math.floor((KATS.length - 1) / 2) + 1) * 42;
+  // De qué está hecha, si se puede saber: un municipio de Iparralde no publica secciones, y de los barrutis y los
+  // barruti judiziales la web no publica qué municipios los forman. Sin eso, la sección no se abre.
+  const estK = folioBizirik("estatu"), ineak = folioIneak(z);
+  if (z.maila === "muni") {
+    if (folioSekzioak(z, estK).length) { y = foAtala(doc, y, T.folio.sekziozSekzio); foSekzioakBlokea(doc, z, "estatu", y, D); }
+  } else if (folioBarneZonak(z, estK).size || (ineak && ineak.size)) {
+    y = foAtala(doc, y, T.folio.zatika); foZatikaBlokea(doc, z, "estatu", y, D);
+  }
+  foOina(doc, z);
+
+  doc.save(`${T.folio.fitxategia}_${folioSlug(z.izena)}.pdf`);
+  return z;
+}
+const folioSlug = (s) => String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")  // sin acentos
+  .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+// ---- el botón, a la derecha del nombre de la zona (pestaña de resultados) ----
+const folioBotoia = () => (state.modua === "udalforal" || !folioZona() ? ""
+  : `<button type="button" class="folio" id="foliobtn" title="${T.folio.botoia}" aria-label="${T.folio.botoia}">↓ PDF</button>`);
+let folioLanean = false;
+$("#body").addEventListener("click", async (e) => {
+  const b = e.target.closest("#foliobtn"); if (!b || folioLanean) return;
+  folioLanean = true;
+  b.setAttribute("aria-busy", "true"); b.textContent = `↓ ${T.kargatzen}`;
+  try {
+    await folioa();
+  } catch (err) {
+    b.textContent = `↓ ${T.errorea}`;
+    console.error(err);
+  } finally {
+    folioLanean = false;
+    setTimeout(() => { if ($("#foliobtn") === b) { b.removeAttribute("aria-busy"); b.textContent = "↓ PDF"; } }, 1200);
+  }
+});
 // ---- Bilakaera: cómo ha votado una zona desde 2011 (pestaña del panel de la derecha) ----
 // Los datos están en data/bilakaera/ (scripts/web_bilakaera.py): <id>.json cada municipio; maila/<nivel>.json las zonas
 // de un nivel agregado (territorios, comarcas…) y maila/eh.json el total. Todas sus elecciones, con el % (y los escaños)

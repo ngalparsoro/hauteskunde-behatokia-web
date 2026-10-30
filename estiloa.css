@@ -241,6 +241,11 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 .legend .li { display: flex; align-items: center; gap: 8px; font-size: 13.5px; }
 .legend .cnt { margin-left: auto; font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
 .hint { color: var(--muted); font-size: 12.5px; }
+/* Botón del folio en PDF, a la derecha del nombre de la zona (08-folioa.js) */
+.folio { margin-left: auto; background: none; border: 1px solid var(--line); color: var(--muted); font-family: var(--f-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 7px; cursor: pointer; white-space: nowrap; }
+.folio:hover { color: var(--gold-2); border-color: var(--gold); }
+.folio[aria-busy="true"] { cursor: progress; }
+.hdr .folio + .close { margin-left: 4px; }
 .close { margin-left: auto; background: none; border: 0; color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer; padding: 0 2px; }
 .hdr { display: flex; align-items: flex-start; gap: 10px; }
 .badge { font-family: var(--f-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 7px; border: 1px solid var(--gold); color: var(--gold-2); white-space: nowrap; }
